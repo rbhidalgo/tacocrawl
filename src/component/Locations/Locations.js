@@ -25,7 +25,13 @@ class Locations extends Component {
   render() {
     return (
       <div>
-          <h1>{this.state.locations}</h1>
+         {this.state.locations.map((location, i) => (
+             <li key={i}><a href={location.url}>{location.name}</a><br />
+             <img src={location.image_url} width="100px"></img><br />
+             {location.location.display_address} <br />
+             
+             </li>
+         ))}
       </div>
     )
   }
