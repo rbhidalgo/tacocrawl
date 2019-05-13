@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import NavBar from './component/NavBar/NavBar'
 import Login from './component/Login/Login'
 import ShowUser from './component/ShowUser/ShowUser'
-import Locations from './component/Locations/Locations'
+import Locations from './component/LocationsContainer/LocationsContainer'
 
 import * as routes from './constants/routes';
 import './App.css';
@@ -46,7 +46,6 @@ doSetCurrentUser = user =>
     );
   }
 }
-
 
 
 export default App;

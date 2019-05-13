@@ -14,7 +14,7 @@ const NavBar = ({currentUser}) =>
     <NavLink to={routes.POSTS} activeClassName="selected">POSTS </NavLink>
     {
       currentUser
-        ? <span>hello {currentUser.username}</span>
+        ? <span>hello {currentUser.username} </span>
         :  <NavLink to={'/login'} activeClassName="selected">login </NavLink>
     }
   </div>
