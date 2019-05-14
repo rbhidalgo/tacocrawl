@@ -9,6 +9,11 @@ const NavBar = ({currentUser}) =>
     <h5>NAVBAR</h5>
     <NavLink exact activeClassName="selected" to={routes.ROOT}>ROOT</NavLink>
     <NavLink to={routes.HOME} activeClassName="selected">HOME </NavLink>
+    {
+      currentUser
+        && <NavLink exact to={`${routes.USERS}/${currentUser._id}`}
+        activeClassName="selected">{currentUser.username} Profile </NavLink>
+    }
     <NavLink to={routes.LOCATIONS} activeClassName="selected">LOCATIONS</NavLink>
     <NavLink to={routes.USERS} activeClassName="selected">USERS </NavLink>
     <NavLink to={routes.POSTS} activeClassName="selected">POSTS </NavLink>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
-import Locations from '../LocationsContainer/LocationsContainer'
+import { withRouter, Link } from 'react-router-dom'
 
 
 class ShowUser extends Component {
@@ -23,12 +22,17 @@ class ShowUser extends Component {
     }
   }
   render() {
+    console.log(this.state.user.locations)
     return (
       <div>
-        <h1>{this.state.user.username}</h1>
-        <h1>{this.state.user.password}</h1>
-        <h1>{this.state.user.email}</h1>
-        <h1>{this.state.user.crawl}</h1>
+        <h1>Hello, {this.state.user.username}</h1>
+        {this.state.user.locations &&
+        this.state.user.locations.map((r, i) => 
+        <li>
+          <Link to = {`/locations/${r.id}`}>{r.name}</Link>
+          <button>Delete</button>
+        </li>
+        )}
       </div>
     )
   }

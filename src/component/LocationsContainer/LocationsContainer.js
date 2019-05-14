@@ -48,6 +48,18 @@ class Locations extends Component {
     return array
   }
 
+  doAddCrawl = async (id, name) => {
+    const { currentUser } = this.props
+    const addCrawl = await fetch('/locations', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({id, name, currentUser}),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
+  }
+
   render() {
     const random = this.shuffleArray(this.state.locations);
     //   console.log(randomNumber)
@@ -57,7 +69,11 @@ class Locations extends Component {
              <li key={i}><a href={location.url}>{location.name}</a><br />
              <img src={location.image_url} width="100px"></img><br />
              {location.location.display_address} <br />
-             <button>Add</button>
+             {
+             this.props.currentUser
+             && <button onClick={() => this.doAddCrawl
+            (location.id, location.name)}>Add</button>
+             }
              </li>
          ))}
       </div>
