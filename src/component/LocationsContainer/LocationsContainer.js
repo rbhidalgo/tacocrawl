@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
+import { async } from 'q';
 
 
 class Locations extends Component {
@@ -58,6 +59,8 @@ class Locations extends Component {
         'Content-type': 'application/json'
       }
     })
+    const userJson = await addCrawl.json()
+    this.props.doSetCurrentUser(userJson.user)
   }
 
   render() {
@@ -71,6 +74,7 @@ class Locations extends Component {
              {location.location.display_address} <br />
              {
              this.props.currentUser
+             && !this.props.currentUser.locations.some( r => r.id === location.id)
              && <button onClick={() => this.doAddCrawl
             (location.id, location.name)}>Add</button>
              }

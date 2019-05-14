@@ -15,7 +15,6 @@ const NavBar = ({currentUser}) =>
         activeClassName="selected">{currentUser.username} Profile </NavLink>
     }
     <NavLink to={routes.LOCATIONS} activeClassName="selected">LOCATIONS</NavLink>
-    <NavLink to={routes.USERS} activeClassName="selected">USERS </NavLink>
     <NavLink to={routes.POSTS} activeClassName="selected">POSTS </NavLink>
     {
       currentUser

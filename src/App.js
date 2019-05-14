@@ -37,7 +37,7 @@ doSetCurrentUser = user =>
         <Switch>
           <Route exact path={routes.ROOT} render={() => <div>ROOT</div>} />
           <Route exact path={routes.HOME} render={() => <div>HOME</div>} />
-          <Route exact path={routes.LOCATIONS} render={() => <LocationsContainer  currentUser={currentUser} />} />
+          <Route exact path={routes.LOCATIONS} render={() => <LocationsContainer  currentUser={currentUser} doSetCurrentUser={this.doSetCurrentUser} />} />
           <Route exact path={routes.USERS} render={() => <div>USER</div>} />
           <Route exact path={`${routes.USERS}/:id`} render={() => <ShowUser currentUser={currentUser}/>} />
           <Route exact path={routes.POSTS} render={() => <div>POST</div>} />
