@@ -6,7 +6,8 @@ import { async } from 'q';
 class Locations extends Component {
 
   state = {
-    locations: []
+    locations: [],
+    randomCrawl: []
   }
   componentDidMount(){
       this.getLocations()
@@ -26,18 +27,16 @@ class Locations extends Component {
         // const response = await fetch("api/v1/losangeles");
         const locationsParsed = await search.json();
         console.log(locationsParsed)
-        this.setState({ locations: locationsParsed.data })
+        const shuffledArray = await this.shuffleArray(locationsParsed.data);
+        this.setState({ 
+          locations: locationsParsed.data,
+          randomCrawl: shuffledArray
+         })
       } catch(err) {
           console.log(err)
           return err
       }
   }
- 
-  // randomLocation = () => {
-  //   const maxNumber = 50;
-  //   const randomNumber = Math.floor((Math.random() * maxNumber)+1);
-  //   console.log(randomNumber)
-  // }
 
   shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -46,7 +45,8 @@ class Locations extends Component {
         array[i] = array[j];
         array[j] = temp;
     }
-    return array
+
+    return array.slice(0,5)
   }
 
   doAddCrawl = async (id, name) => {
@@ -63,11 +63,28 @@ class Locations extends Component {
     this.props.doSetCurrentUser(userJson.user)
   }
 
+  addAllCrawl = async (randomCrawl) => {
+    console.log('button clicked')
+    const { currentUser } = this.props
+    const addCrawl = await fetch('/locations/crawl', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({randomCrawl, currentUser}),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
+    const userJson = await addCrawl.json()
+    this.props.doSetCurrentUser(userJson.user)
+  }
+
   render() {
-    const random = this.shuffleArray(this.state.locations);
+    // const random = this.shuffleArray(this.state.locations);
+    const random = this.state.randomCrawl;
     //   console.log(randomNumber)
     return (
       <div>
+        <button onClick={() => this.addAllCrawl(random)}>Add Crawl</button>
          {random.map((location, i) => (
              <li key={i}><a href={location.url}>{location.name}</a><br />
              <img src={location.image_url} width="100px"></img><br />

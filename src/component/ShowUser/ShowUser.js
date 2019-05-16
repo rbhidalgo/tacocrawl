@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom'
+import EditUser from '../EditUser/EditUser'
+
 
 
 class ShowUser extends Component {
   state = {
     user: {},
-    locations: []
+    locations: [],
+    userToEdit: {
+      username: '',
+      password: '',
+      email: ''
+    }
   }
 
   componentDidMount() {
@@ -22,46 +29,6 @@ class ShowUser extends Component {
       console.log(err)
     }
   }
-
-  // doDeleteCrawl = async (id, e) => {
-  //   console.log(id, ' this is the id')
-  //   e.preventDefault()
-  // }
-
-
-  // doDeleteCrawl = async (id, name) => {
-  //   const { currentUser } = this.props
-  //   const addCrawl = await fetch('/users/user', {
-  //     method: 'DELETE',
-  //     credentials: 'include',
-  //     body: JSON.stringify({id, name, currentUser}),
-  //     headers: {
-  //       'Content-type': 'application/json'
-  //     }
-  //   })
-  // }
-
-  // doDeleteLocation= async (id, e) => {
-  //   console.log(id, " this is id");
-  //   //e.preventDefault(e);
-  //   try {
-  //     const deleteLocation = await fetch(
-  //       `/locations/${this.props.user.restaurants.id}`,
-  //       {
-  //         method: "DELETE"
-  //       }
-  //     );
-  //     console.log(deleteLocation, "inside try");
-  //     const deleteLocationJson = await deleteLocation.json();
-  //     this.setState({
-  //       LocationId: this.state.locationId.filter(
-  //         (location, i) => location._id !== id
-  //       )
-  //     });
-  //   } catch (err) {
-  //     console.log(err, " error");
-  //   }
-  // };
 
   doDeleteLocation = async (id, e) => {
     try {
@@ -80,8 +47,43 @@ class ShowUser extends Component {
     }
   }
 
+
+  editUser = async () => {
+      try { const editUserResponse = await fetch(`/users/update/${this.props.match.params.id}`, {
+        method: 'PUT',
+        credentials: 'include',
+        body: JSON.stringify(this.state.userToEdit),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+        
+      })
+      console.log(editUserResponse)
+      const editUserJson = await editUserResponse.json();
+      console.log(editUserJson)
+      this.setState({
+        user: editUserJson
+      },()=>{
+        this.props.doSetCurrentUser(editUserJson)
+      })
+        
+      } catch(err){
+        console.log(err)
+      }
+    }
+
+    handleFormChange = (e) => {
+      this.setState({
+        userToEdit: {
+          ...this.state.userToEdit,
+          [e.target.name]: e.target.value
+        }
+      })
+      console.log(this.state.userToEdit)
+    }
+
   render() {
-    console.log(this.state.user.locations)
+    console.log(this.state.user)
     return (
       <div>
         <h1>Hello, {this.state.user.username}</h1>
@@ -92,6 +94,7 @@ class ShowUser extends Component {
           <button onClick={() => this.doDeleteLocation(r.id)}>Delete</button>
         </li>
         )}
+        < EditUser editUser={this.editUser} handleFormChange={this.handleFormChange} userToEdit={this.state.userToEdit}/>
       </div>
     )
   }
