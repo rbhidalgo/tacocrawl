@@ -45,9 +45,8 @@ doLogout = () => {
           <Route exact path={routes.ROOT} render={() => <div>ROOT</div>} />
           <Route exact path={routes.HOME} render={() => <div>HOME</div>} />
           <Route exact path={routes.LOCATIONS} render={() => <LocationsContainer  currentUser={currentUser} doSetCurrentUser={this.doSetCurrentUser} />} />
-          <Route exact path={routes.USERS} render={() => <div>USER</div>} />
+          {/* <Route exact path={routes.USERS} render={() => <div>My Profile</div>} /> */}
           <Route exact path={`${routes.USERS}/:id`} render={() => <ShowUser currentUser={currentUser} doSetCurrentUser={this.doSetCurrentUser}/>} />
-          <Route exact path={routes.POSTS} render={() => <div>POST</div>} />
           <Route exact path={routes.LOGIN} render={() => <Login currentUser={currentUser} doSetCurrentUser={this.doSetCurrentUser}/>} />
           <Route render={() => <div>NOT FOUND</div>} />
         </Switch>

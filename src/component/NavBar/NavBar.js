@@ -15,7 +15,6 @@ const NavBar = ({currentUser, doLogout}) =>
         activeClassName="selected">{currentUser.username} Profile </NavLink>
     }
     <NavLink to={routes.LOCATIONS} activeClassName="selected">LOCATIONS</NavLink>
-    <NavLink to={routes.POSTS} activeClassName="selected">POSTS </NavLink>
     {
       currentUser
         ? <span>hello {currentUser.username} <button onClick={doLogout}>LOGOUT</button></span>

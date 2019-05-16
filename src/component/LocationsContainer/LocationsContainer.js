@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
-import { async } from 'q';
-
+import { withRouter } from 'react-router-dom';
+import MapContainer from '../MapContainer/MapContainer';
 
 class Locations extends Component {
 
@@ -18,7 +17,7 @@ class Locations extends Component {
         const search = await fetch('/api/v1/', {
           method: 'POST',
           credentials: 'include',
-          body: JSON.stringify({location: 'east los angeles', limit: 5}),
+          body: JSON.stringify({location: 'east los angeles'}),
           headers:{
               "Content-type" : 'application/json'
           }
@@ -84,19 +83,26 @@ class Locations extends Component {
     //   console.log(randomNumber)
     return (
       <div>
+        { this.props.currentUser ?
+      
         <button onClick={() => this.addAllCrawl(random)}>Add Crawl</button>
+        : <h1>log-in to add a crawl</h1>
+        }
          {random.map((location, i) => (
              <li key={i}><a href={location.url}>{location.name}</a><br />
              <img src={location.image_url} width="100px"></img><br />
              {location.location.display_address} <br />
+             {location.rating}<br />
+             {location.review_count}<br />
              {
              this.props.currentUser
              && !this.props.currentUser.locations.some( r => r.id === location.id)
              && <button onClick={() => this.doAddCrawl
-            (location.id, location.name)}>Add</button>
+            (location.id, location.name)}>Add</button> 
              }
              </li>
          ))}
+         < MapContainer random={random} />
       </div>
     )
   }
