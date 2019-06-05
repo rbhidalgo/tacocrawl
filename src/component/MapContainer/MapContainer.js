@@ -7,7 +7,7 @@ class MapContainer extends Component {
     static defaultProps = {
         center: {
             lat: 34.05,
-            lng: -118.15
+            lng: -118.21
         },
         zoom: 11
     }

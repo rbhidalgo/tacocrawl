@@ -1,15 +1,24 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@import url(https://fonts.googleapis.com/css?family=Baloo+Bhai|Montserrat|Raleway:600&display=swap);
+h1 {
+  font-family: 'Baloo Bhai', cursive;
+  font-size: 48px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  background-image: url('./heather-ford-1270567-unsplash.jpg');
+  background-position: 25% 75%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; 
 }
 
 .pin {

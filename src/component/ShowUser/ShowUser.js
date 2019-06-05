@@ -12,7 +12,8 @@ class ShowUser extends Component {
       username: '',
       password: '',
       email: ''
-    }
+    },
+    // colors: ["#FFFFFF", "#B0366F", "#FFED03"]
   }
 
   componentDidMount() {
@@ -47,6 +48,11 @@ class ShowUser extends Component {
     }
   }
 
+  // changeBg() {
+  //   const { colors } = this.state;
+  //   const color = colors[Math.floor(Math.random() * colors.length)];
+  //   document.body.style.backgroundColor = color;
+  // }
 
   editUser = async () => {
       try { const editUserResponse = await fetch(`/users/update/${this.props.match.params.id}`, {
@@ -95,6 +101,7 @@ class ShowUser extends Component {
         </li>
         )}
         < EditUser editUser={this.editUser} handleFormChange={this.handleFormChange} userToEdit={this.state.userToEdit}/>
+        {/* <button onClick={() => this.changeBg()}>Change Color</button> */}
       </div>
     )
   }
