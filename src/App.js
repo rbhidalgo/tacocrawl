@@ -45,6 +45,7 @@ doLogout = () => {
     return (
       <div>
         {/* <Body> */}
+        <h1>hello</h1>
         <NavBar currentUser={currentUser} doLogout={this.doLogout}/>
         <Switch>
           <Route exact path={routes.HOME} render={() => < Home />} />
