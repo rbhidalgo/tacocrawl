@@ -18,7 +18,13 @@ class ShowUser extends Component {
 
   componentDidMount() {
     this.doGetUser()
-      .then(({user}) => this.setState({user}))
+      .then(({user}) => this.setState({
+        user,
+        userToEdit:{
+          username:user.username,
+          email:user.email
+        }
+      }))
   }
 
   doGetUser = async () => {

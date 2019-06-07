@@ -7,7 +7,7 @@ const client = yelp.client(process.env.MY_KEY)
    console.log(req.body.location)
   client
    .search({
-    term: "tacos, taqueria, beer",
+    term: "tacos, taqueria",
     location: `${req.body.location}, ca`,
     limit: 40,
     open_now: true,

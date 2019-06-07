@@ -4,8 +4,8 @@ import Input from '../styles/Input'
 
 const EditUser = (props) =>  {
 
-    const onSubmit = ()=>{
-        // e.preventDefault();
+    const onSubmit = (e)=>{
+        e.preventDefault();
         props.editUser();
     }
 

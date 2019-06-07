@@ -9,7 +9,8 @@ class Locations extends Component {
   state = {
     locations: [],
     randomCrawl: [],
-    location: ''
+    menuLocation: 'Choose Location',
+    toggle: false
   }
   componentDidMount(){
       this.getLocations()
@@ -85,24 +86,49 @@ class Locations extends Component {
         [e.currentTarget.name]: e.currentTarget.value
       })}
 
+  location = ()=>{
+    return ["East Los Angeles","Downtown Los Angeles", "Historic South Central", "Hollywood", "Long Beach", "Whittier"]
+  }
+
+  toggleHandler = () => {
+    this.setState({
+      toggle: true
+    })
+  }
+
+  toggleOff = (e) =>{
+    console.log(e.target.innerText)
+    this.setState({
+      toggle:false,
+      location: e.target.innerText,
+      menuLocation: e.target.innerText
+    })
+  }
+
   render() {
-    // const random = this.shuffleArray(this.state.locations);
+    const { toggleHandler } = this
     const random = this.state.randomCrawl;
-    const location = this.state.location;
     //   console.log(randomNumber)
     return (
       <CrawlContainer>
-        <form>
-          <label>Enter Location < Input type="text" name="location" onChange={this.handleChange} value={location} /></label>
-          < Input type='Submit' />
-        </form>
+        <div>
+          <div onClick={toggleHandler}>{this.state.menuLocation}</div>
+          {this.state.toggle && 
+          (<ul className="dropDown">
+            {this.location().map((l,i)=>{
+              return <li onClick={this.toggleOff} key={i}>{l}</li>
+            })}
+          </ul>)
+          }
+          <button onClick={this.getLocations}>Submit</button>
+        </div>
         <div>
         { this.props.currentUser ?
       
         <button onClick={() => this.addAllCrawl(random)}>Add Crawl</button>
         : <h3><span className="spanHighlight">log-in to add a crawl</span></h3>
         }
-        <h1>East LA Taco Crawl</h1>
+        <h1>{this.state.menuLocation} Taco Crawl</h1>
          {random.map((location, i) => (
              <li key={i}><a href={location.url}>{location.name}</a><br />
              <img src={location.image_url} width="100px"></img><br />
