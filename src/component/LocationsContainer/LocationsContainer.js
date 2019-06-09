@@ -9,8 +9,12 @@ class Locations extends Component {
   state = {
     locations: [],
     randomCrawl: [],
+    location: '',
     menuLocation: 'Choose Location',
-    toggle: false
+    toggle: false,
+    toggleNumber: false,
+    numberOfLocations: Number,
+    numbTextLocations: 'How many locations?'
   }
   componentDidMount(){
       this.getLocations()
@@ -42,6 +46,7 @@ class Locations extends Component {
   }
 
   shuffleArray(array) {
+    console.log(array, '<----- shuffle array')
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = array[i];
@@ -49,7 +54,7 @@ class Locations extends Component {
         array[j] = temp;
     }
 
-    return array.slice(0,5)
+    return array.slice(0,`${this.state.numberOfLocations}`)
   }
 
   doAddCrawl = async (id, name, url) => {
@@ -87,7 +92,11 @@ class Locations extends Component {
       })}
 
   location = ()=>{
-    return ["East Los Angeles","Downtown Los Angeles", "Historic South Central", "Hollywood", "Long Beach", "Whittier"]
+    return ["East Los Angeles","Downtown Los Angeles", "Historic South Central", "Hollywood", "Santa Monica", "Pasadena"]
+  }
+
+  numberOfLocations = ()=> {
+    return [ 3, 4, 5, 6, 7, 8, 9, 10]
   }
 
   toggleHandler = () => {
@@ -105,8 +114,23 @@ class Locations extends Component {
     })
   }
 
+  toggleHandlerNumber = () => {
+    this.setState({
+      toggleNumber: true
+    })
+  }
+
+  toggleOffNumber = (e) =>{
+    console.log(e.target.innerText)
+    this.setState({
+      toggleNumber:false,
+      numberOfLocations: e.target.innerText,
+      numbTextLocations: e.target.innerText
+    })
+  }
+
   render() {
-    const { toggleHandler } = this
+    const { toggleHandler, toggleHandlerNumber } = this
     const random = this.state.randomCrawl;
     //   console.log(randomNumber)
     return (
@@ -123,8 +147,19 @@ class Locations extends Component {
           <button onClick={this.getLocations}>Submit</button>
         </div>
         <div>
-        { this.props.currentUser ?
-      
+          <div onClick={toggleHandlerNumber}>{this.state.numbTextLocations}</div>
+          {this.state.toggleNumber && 
+          (<ul className="dropDown">
+            {this.numberOfLocations().map((n,i)=>{
+              return <li onClick={this.toggleOffNumber} key={i}>{n}</li>
+            })}
+          </ul>)
+          }
+          <button onClick={this.getLocations}>Submit</button>
+        </div>
+        <div>
+        { this.props.currentUser
+          && this.state.location !== '' ?
         <button onClick={() => this.addAllCrawl(random)}>Add Crawl</button>
         : <h3><span className="spanHighlight">log-in to add a crawl</span></h3>
         }
@@ -136,7 +171,7 @@ class Locations extends Component {
              <h3>rating: <span className="spanHighlight">{location.rating}</span> Review Count: <span className="spanHighlight">{location.review_count}</span></h3><br />
              {
              this.props.currentUser
-             && !this.props.currentUser.locations.some( r => r.id === location.id)
+             && !this.props.currentUser.locations.some( l => l.id === location.id)
              && <button onClick={() => this.doAddCrawl
             (location.id, location.name)}>Add</button> 
              }

@@ -14,11 +14,11 @@ h1 {
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  background-image: url('./heather-ford-1270567-unsplash.jpg');
-  background-position: 25% 75%;
+  background-image: url('./tacopattern3.svg');
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover; 
+  background-repeat: repeat;
+  background-color: #FFFCF7;
+  
 }
 
 .pin {
