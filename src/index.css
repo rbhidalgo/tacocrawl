@@ -1,9 +1,7 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  text-align: center;
-} */
+}
 
 /* @import url(https://fonts.googleapis.com/css?family=Baloo+Bhai|Montserrat|Raleway:600&display=swap);
 h1 {
@@ -11,7 +9,12 @@ h1 {
   font-size: 48px;
 } */
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   background-image: url('./tacopattern3.svg');

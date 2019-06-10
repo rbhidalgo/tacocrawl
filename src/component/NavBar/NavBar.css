@@ -21,6 +21,10 @@
 
 @import url(https://fonts.googleapis.com/css?family=Baloo+Bhai|Montserrat|Raleway:600&display=swap);
 
+.navbar_logo {
+  margin-left: 1rem;
+}
+
 .navbar_logo h1 {
   font-family: 'Baloo Bhai', cursive;
   font-size: 2rem;
@@ -43,21 +47,38 @@
   padding: 0 0.5rem;
 }
 
-/* .navbar_nav-items a:link, a:visited {
+.navbar_nav-items a:link, a:visited {
   background-color: #FFED03;
   color: black;
   padding: 14px 25px;
-  text-align: center;
+  /* text-align: center; */
   text-decoration: none;
-  display: inline-block;
-} */
+  /* display: inline-block; */
+}
 
-/* .navbar_nav-items a:hover, a:active {
+.navbar_nav-items a:hover, a:active {
   background-color: #FF009D;
   color: white;
   border-bottom: 2px solid yellow;
-} */
+}
 
 .space {
   flex: 1;
+}
+
+@media (max-width: 768px) {
+  .navbar_nav-items {
+   display: none; 
+  }
+}
+
+@media (min-width: 769px) {
+  .side-menu-toggle {
+    display: none;
+  }
+
+
+  .navbar_logo {
+    margin-left: 0;
+  }
 }

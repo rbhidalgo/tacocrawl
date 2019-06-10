@@ -2,21 +2,20 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 import * as routes from '../../constants/routes'
-import './NavBar.css'
-import MenuToggleButton from '../SideMenu/MenuToggleButton';
 
-const NavBar = ({currentUser, doLogout, sideMenuToggleClickHandler}) => (
-  <header className="navbar">
-    <nav className="navbar_navigation">
-        <div className="side-menu-toggle">
-          <MenuToggleButton click={sideMenuToggleClickHandler}/>
-        </div>
-        <div className="navbar_logo">
-          <h1>LA Taco Crawl</h1>
-        </div>
-        <div className="space" />
-          <div className="navbar_nav-items">
-              <NavLink to={routes.HOME} activeClassName="selected">Home</NavLink>
+import './SideMenu.css';
+
+const sideMenu = ({currentUser, doLogout, show}) => {
+
+    let menuClasses = 'side-menu';
+    if(show){
+        console.log(show)
+        menuClasses = 'side-menu open';
+    }
+
+    return(
+    <nav className={menuClasses}>
+         <NavLink to={routes.HOME} activeClassName="selected">Home</NavLink>
               {
                 currentUser
                   && <NavLink exact to={`${routes.USERS}/${currentUser._id}`}
@@ -29,11 +28,8 @@ const NavBar = ({currentUser, doLogout, sideMenuToggleClickHandler}) => (
                 : [<NavLink key={2} to={routes.REGISTER} activeClassName="selected">Register </NavLink>, 
                 <NavLink key={3} to={'/login'} activeClassName="selected">Login </NavLink>]
               }
-          </div>
     </nav>
-  </header>
 );
+};
 
-
-
-export default NavBar
+export default sideMenu;

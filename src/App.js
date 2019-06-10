@@ -7,16 +7,18 @@ import Home from './component/Home/Home'
 import ShowUser from './component/ShowUser/ShowUser'
 import LocationsContainer from './component/LocationsContainer/LocationsContainer';
 import Register from './component/Register/Register';
+import SideMenu from './component/SideMenu/SideMenu';
+import Backdrop from './component/Backdrop/Backdrop';
+
 
 import * as routes from './constants/routes';
 // import Body from './component/styles/Body';
 import './index.css';
 
-
-
 class App extends Component {
   state = {
-    currentUser: null
+    currentUser: null,
+    sideMenuOpen: false
   }
 
 doSetCurrentUser = user =>
@@ -38,12 +40,35 @@ doLogout = () => {
   //   e.preventDefault()
   //   console.log('')
   // }s
+
+  sideMenuToggleClickHandler = () => {
+    this.setState({
+      sideMenuOpen: true
+    })
+  };
+
+  backdropClickHandler = () => {
+    this.setState({
+      sideMenuOpen: false
+    })
+  }
   
   render() {
-    const {currentUser} = this.state
+    // let sideMenu;
+    // let backdrop;
+    // if (this.state.sideMenuOpen) {
+    //   sideMenu = <SideMenu />
+    //   backdrop = <Backdrop />
+    // }
+    const {currentUser, doLogout, sideMenuOpen} = this.state
     return (
-      <div>
-        <NavBar currentUser={currentUser} doLogout={this.doLogout}/>
+      <div style={{height: '100%'}}>
+        <NavBar currentUser={currentUser} doLogout={doLogout} sideMenuToggleClickHandler={this.sideMenuToggleClickHandler} />
+        <SideMenu currentUser={currentUser} doLogout={doLogout} show={sideMenuOpen}/> 
+        {
+          sideMenuOpen
+          && <Backdrop click={this.backdropClickHandler}/>
+        }
         <main style={{marginTop: '64px'}}>
         <Switch>
           <Route exact path={routes.HOME} render={() => < Home />} />
