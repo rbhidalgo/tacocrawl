@@ -30,3 +30,34 @@
 .navbar_logo img {
   width: 80px;
 }
+
+.navbar_nav-items {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar_nav-items a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 0.5rem;
+}
+
+/* .navbar_nav-items a:link, a:visited {
+  background-color: #FFED03;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} */
+
+/* .navbar_nav-items a:hover, a:active {
+  background-color: #FF009D;
+  color: white;
+  border-bottom: 2px solid yellow;
+} */
+
+.space {
+  flex: 1;
+}

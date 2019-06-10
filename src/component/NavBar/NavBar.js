@@ -11,6 +11,7 @@ const NavBar = ({currentUser, doLogout}) =>
         <div className="navbar_logo">
           <h1>LA Taco Crawl</h1>
         </div>
+        <div className="space" />
           <div className="navbar_nav-items">
               <NavLink to={routes.HOME} activeClassName="selected">Home</NavLink>
               {
