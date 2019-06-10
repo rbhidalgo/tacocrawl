@@ -7,6 +7,7 @@ margin: 0 auto;
 padding: 25px;
 width: 75vw;
 background-color: #ffffffa6;
+margin-top: 150px;
 
 .pMain {
     font-size: 25px;
