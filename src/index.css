@@ -1,15 +1,15 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-}
+} */
 
-@import url(https://fonts.googleapis.com/css?family=Baloo+Bhai|Montserrat|Raleway:600&display=swap);
+/* @import url(https://fonts.googleapis.com/css?family=Baloo+Bhai|Montserrat|Raleway:600&display=swap);
 h1 {
   font-family: 'Baloo Bhai', cursive;
   font-size: 48px;
-}
+} */
 
 body {
   font-family: 'Montserrat', sans-serif;

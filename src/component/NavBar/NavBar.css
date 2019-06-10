@@ -1,4 +1,32 @@
-.selected {
+/* .selected {
     color: white;
     border-bottom: 2px solid yellow;
+  } */
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #FF009D;
+    height: 100px;
   }
+
+.navbar_navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Baloo+Bhai|Montserrat|Raleway:600&display=swap);
+
+.navbar_logo h1 {
+  font-family: 'Baloo Bhai', cursive;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.navbar_logo img {
+  width: 80px;
+}
