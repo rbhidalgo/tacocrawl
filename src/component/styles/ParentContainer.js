@@ -10,8 +10,11 @@ margin-top: 125px;
 
 .p-main {
     font-size: 28px;
-    margin: 0 2vw;
+    margin: 0 auto;
     padding: 2vw;
+    color: #049DD8;
+    width: 75%;
+    text-align: center;
 }
 
 .spanHighlight {
@@ -24,6 +27,22 @@ margin-top: 125px;
         margin-right: auto;
         width: 80%;
         border-radius: 15px;
+}
+
+.button-container {
+    position: relative;
+    width: 100%;
+}
+
+.button-text {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.button-but {
+    position: absolute;
+    margin: 0 auto;
 }
 
 `;
