@@ -10,7 +10,6 @@ require('dotenv').config();
 
 require('./db/db')
 
-console.log(process.env.MY_SECRET)
 
 const apiRouter = require('./routes/api');
 const usersRouter = require('./routes/users');
@@ -39,7 +38,6 @@ app.use('/users', usersRouter);
 app.post('/locations', async (req, res) => {
   const foundUser = await User.findById
   (req.body.currentUser._id)
-  // console.log(foundUser)
   const location = {
     id: req.body.id,
     name: req.body.name,
@@ -55,7 +53,6 @@ app.post('/locations', async (req, res) => {
 app.post('/locations/crawl', async (req, res) => {
   const foundUser = await User.findById
   (req.body.currentUser._id)
-  // console.log(foundUser)
   const crawlLocations = req.body.randomCrawl
   for (let i = 0; i < crawlLocations.length; i++) {
     const location = {
