@@ -33,7 +33,7 @@ margin-top: 125px;
     width: 100%;
 }
 
-.button-text {
+.bottom-text {
     color: #FF009D;
     font-size: 20px;
     font-family: hwt-republic-gothic-outline, sans-serif;
@@ -44,7 +44,7 @@ margin-top: 125px;
     text-overflow: clip;  
     position: absolute;
     margin: -2vh auto;
-    height: 24vh;
+    height: 15vh;
     width: 100%;
 }
 

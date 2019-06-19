@@ -22,7 +22,7 @@ const Home = () => {
 				<br />
 			</div>
 			<div className='button-container'>
-				<div className='button-text'>
+				<div className='bottom-text'>
 					<p>
 						Los Angeles • East LA • Downtown LA • Historic South Central •
 						Hollywood • Long Beach • Whittier • Los Angeles • East LA • Downtown

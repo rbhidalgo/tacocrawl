@@ -141,7 +141,7 @@ class Locations extends Component {
 		return (
 			<CrawlContainer style={{ marginTop: "10vh", textAlign: "center" }}>
 				<div>
-					<div onClick={toggleHandler}><h2>1. {this.state.menuLocation}</h2></div>
+					<div onClick={toggleHandler}><h2>{this.state.menuLocation}</h2></div>
 					{this.state.toggle && (
 						<ul className='dropDown'>
 							{this.location().map((l, i) => {
@@ -157,7 +157,7 @@ class Locations extends Component {
 				<br/>
 				<div>
 					<div onClick={toggleHandlerNumber}>
-						<h2>2. {this.state.numbTextLocations}</h2>
+						<h2>{this.state.numbTextLocations}</h2>
 					</div>
 					{this.state.toggleNumber && (
 						<ul className='dropDown'>
