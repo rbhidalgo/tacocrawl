@@ -11,10 +11,11 @@ const EditUser = (props) =>  {
 
     return (
       <div>
-        <h4> Edit User</h4>
+        <br/>
+        <h4>edit your profile</h4>
         <form onSubmit={onSubmit}>
           <label>
-            user name: < Input type="text" name="username" onChange={props.handleFormChange} value={props.userToEdit.username} placeholder='username'/><br />
+            username: < Input type="text" name="username" onChange={props.handleFormChange} value={props.userToEdit.username} placeholder='username'/><br />
             password: < Input type="password" name="password" onChange={props.handleFormChange} value={props.userToEdit.password} placeholder='password'/><br />
             email: < Input type="text" name="email" onChange={props.handleFormChange} value={props.userToEdit.email} placeholder='email'/><br />
           </label>

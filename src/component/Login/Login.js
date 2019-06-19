@@ -38,10 +38,14 @@ class Login extends Component {
 
 	render() {
 		const { username, password } = this.state;
-		return this.state.logged ? (
+		return ( 
+			
+			this.state.logged ? (
 			<Redirect to={`/users/${this.props.currentUser._id}`} />
 		) : (
-			<form onSubmit={this.onSubmit} style={{ marginTop: "10vh", textAlign: "center" }}>
+			<form
+				onSubmit={this.onSubmit}
+				style={{ marginTop: "10vh", textAlign: "center" }}>
 				<Input
 					type='text'
 					name='username'
@@ -55,9 +59,11 @@ class Login extends Component {
 					value={password}
 					onChange={this.changeHandler}
 					placeholder='password'
-				/> < br/>
+				/>
+				<br />
 				<Button type='submit'>Submit</Button>
 			</form>
+		)
 		);
 	}
 }
