@@ -66,7 +66,7 @@ const RegisterForm = ({
 	password,
 	email
 }) => (
-	<form onSubmit={e => onSubmit(e)} style={{ marginTop: "10vh", textAlign: "center" }}>
+	<form onSubmit={e => onSubmit(e)} style={{ marginTop: "15vh", textAlign: "center" }}>
 		<label htmlFor='username'>Username</label>
 		<Input
 			onChange={e => changeHandler(e)}

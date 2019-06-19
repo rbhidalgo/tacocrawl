@@ -45,7 +45,7 @@ class Login extends Component {
 		) : (
 			<form
 				onSubmit={this.onSubmit}
-				style={{ marginTop: "10vh", textAlign: "center" }}>
+				style={{ marginTop: "15vh", textAlign: "center" }}>
 				<label>username:</label>
 				<Input
 					type='text'
