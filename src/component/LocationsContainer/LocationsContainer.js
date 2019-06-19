@@ -141,7 +141,7 @@ class Locations extends Component {
 		return (
 			<CrawlContainer style={{ marginTop: "10vh", textAlign: "center" }}>
 				<div>
-					<div onClick={toggleHandler}>{this.state.menuLocation}</div>
+					<div onClick={toggleHandler}><h2>1. {this.state.menuLocation}</h2></div>
 					{this.state.toggle && (
 						<ul className='dropDown'>
 							{this.location().map((l, i) => {
@@ -157,7 +157,7 @@ class Locations extends Component {
 				<br/>
 				<div>
 					<div onClick={toggleHandlerNumber}>
-						{this.state.numbTextLocations}
+						<h2>2. {this.state.numbTextLocations}</h2>
 					</div>
 					{this.state.toggleNumber && (
 						<ul className='dropDown'>
@@ -181,7 +181,7 @@ class Locations extends Component {
 							<span className='spanHighlight'>log-in to add a crawl</span>
 						</h3>
 					)}
-					<h2>{this.state.menuLocation} Taco Crawl</h2>
+					<h2>{this.state.menuLocation} Taco Crawl</h2><br/>
 					{random.map((location, i) => (
 						<li key={i}>
 							<a href={location.url}>{location.name}</a>
@@ -190,7 +190,7 @@ class Locations extends Component {
 							<br />
 							{location.location.display_address} <br />
 							<h3>
-								rating: <span className='spanHighlight'>{location.rating}</span>{" "}
+								rating: <span className='spanHighlight'>{location.rating}</span>
 								Review Count:
 								<span className='spanHighlight'>{location.review_count}</span>
 							</h3>
