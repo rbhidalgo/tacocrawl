@@ -9,8 +9,8 @@ justify-content: space-between;
 margin-top: 125px;
 
 .p-main {
-    font-size: 28px;
-    margin: 0 auto;
+    font-size: 20px;
+    margin: 3vh auto;
     padding: 2vw;
     color: #049DD8;
     width: 75%;
@@ -30,19 +30,28 @@ margin-top: 125px;
 }
 
 .button-container {
-    position: relative;
     width: 100%;
 }
 
 .button-text {
+    color: #FF009D;
+    font-size: 20px;
+    font-family: hwt-republic-gothic-outline, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: justify;  
+    overflow: hidden;
+    text-overflow: clip;  
     position: absolute;
-    margin: 0 auto;
+    margin: -2vh auto;
+    height: 24vh;
     width: 100%;
 }
 
 .button-but {
-    position: absolute;
-    margin: 0 auto;
+    position:absolute;
+    top: 70vh;
+    left: 25vw;
 }
 
 `;

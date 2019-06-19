@@ -12,7 +12,7 @@ const NavBar = ({ currentUser, doLogout, sideMenuToggleClickHandler }) => (
 				<MenuToggleButton click={sideMenuToggleClickHandler} />
 			</div>
 			<div className='navbar_logo'>
-				<h1>LA Taco Crawl</h1>
+				<h1>taco crawling</h1>
 			</div>
 			<div className='space' />
 			<div className='navbar_nav-items'>

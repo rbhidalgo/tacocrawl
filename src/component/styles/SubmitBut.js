@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const SubmitBut = styled.button`
-  width: 25%;
   text-align: center;
-  border:none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: hwt-republic-gothic-solid, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 18px;
-  background: white;
   margin: 10px;
+  
 
   a:link, a:visited {
-    background-color: #FFED03;
-    color: black;
+    background-color: #FF009D;
+    color: #ffffff;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
@@ -20,7 +20,7 @@ const SubmitBut = styled.button`
   }
   
   a:hover, a:active {
-    background-color: #FF009D;
+    background-color: #FFED03;
     color: white;
     border-bottom: 2px solid yellow;
 
