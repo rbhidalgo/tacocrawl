@@ -12,7 +12,6 @@ import Backdrop from './component/Backdrop/Backdrop';
 
 
 import * as routes from './constants/routes';
-// import Body from './component/styles/Body';
 import './index.css';
 
 class App extends Component {
@@ -33,14 +32,6 @@ doLogout = () => {
   this.props.history.push(routes.HOME)
 }
 
-  componentDidMount(){
-  }
-
-  // doFetchYelp = e => {
-  //   e.preventDefault()
-  //   console.log('')
-  // }s
-
   sideMenuToggleClickHandler = () => {
     this.setState({
       sideMenuOpen: true
@@ -54,12 +45,6 @@ doLogout = () => {
   }
   
   render() {
-    // let sideMenu;
-    // let backdrop;
-    // if (this.state.sideMenuOpen) {
-    //   sideMenu = <SideMenu />
-    //   backdrop = <Backdrop />
-    // }
     const {currentUser, doLogout, sideMenuOpen} = this.state
     return (
       <div style={{height: '100%'}}>

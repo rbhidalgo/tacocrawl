@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const SubmitBut = styled.button`
+  // width: 50vw;
   text-align: center;
+  border:none;
   font-family: hwt-republic-gothic-solid, sans-serif;
   font-weight: 400;
   font-style: normal;

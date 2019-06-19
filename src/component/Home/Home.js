@@ -11,7 +11,6 @@ const Home = () => {
 			<div className='home-image'>
 				<img src='../public/images/tacoonblack2.jpg' />
 			</div>
-			{/* <div> <Heading>Taco Crawl?</Heading> </div> */}
 			<div>
 				<p className='p-main'>
 					“ Go eat tacos from place to place.{" "}
