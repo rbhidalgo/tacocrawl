@@ -138,9 +138,8 @@ class Locations extends Component {
 	render() {
 		const { toggleHandler, toggleHandlerNumber } = this;
 		const random = this.state.randomCrawl;
-		//   console.log(randomNumber)
 		return (
-			<CrawlContainer>
+			<CrawlContainer style={{ marginTop: "10vh", textAlign: "center" }}>
 				<div>
 					<div onClick={toggleHandler}>{this.state.menuLocation}</div>
 					{this.state.toggle && (
@@ -154,8 +153,8 @@ class Locations extends Component {
 							})}
 						</ul>
 					)}
-					<button onClick={this.getLocations}>Submit</button>
 				</div>
+				<br/>
 				<div>
 					<div onClick={toggleHandlerNumber}>
 						{this.state.numbTextLocations}
@@ -173,15 +172,16 @@ class Locations extends Component {
 					)}
 					<button onClick={this.getLocations}>Submit</button>
 				</div>
+				<br/>
 				<div>
 					{this.props.currentUser && this.state.location !== "" ? (
-						<button onClick={() => this.addAllCrawl(random)}>Add Crawl</button>
+						<button onClick={() => this.addAllCrawl(random)}>Add Entire Crawl</button>
 					) : (
 						<h3>
 							<span className='spanHighlight'>log-in to add a crawl</span>
 						</h3>
 					)}
-					<h1>{this.state.menuLocation} Taco Crawl</h1>
+					<h2>{this.state.menuLocation} Taco Crawl</h2>
 					{random.map((location, i) => (
 						<li key={i}>
 							<a href={location.url}>{location.name}</a>
@@ -191,7 +191,7 @@ class Locations extends Component {
 							{location.location.display_address} <br />
 							<h3>
 								rating: <span className='spanHighlight'>{location.rating}</span>{" "}
-								Review Count:{" "}
+								Review Count:
 								<span className='spanHighlight'>{location.review_count}</span>
 							</h3>
 							<br />
@@ -208,7 +208,7 @@ class Locations extends Component {
 					))}
 				</div>
 				<div>
-					<MapContainer random={random} />
+					<MapContainer random={random}/>
 				</div>
 			</CrawlContainer>
 		);
