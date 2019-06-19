@@ -46,19 +46,19 @@ class Login extends Component {
 			<form
 				onSubmit={this.onSubmit}
 				style={{ marginTop: "10vh", textAlign: "center" }}>
+				<label>username:</label>
 				<Input
 					type='text'
 					name='username'
 					value={username}
 					onChange={this.changeHandler}
-					placeholder='username'
-				/>
+				/><br/>
+				<label>password</label>
 				<Input
 					type='password'
 					name='password'
 					value={password}
 					onChange={this.changeHandler}
-					placeholder='password'
 				/>
 				<br />
 				<Button type='submit'>Submit</Button>

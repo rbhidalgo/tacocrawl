@@ -42,7 +42,7 @@ class Register extends Component {
 		const { username, password, email } = this.state;
 
 		return (
-			<div style={{ marginTop: "64px" }}>
+			<div>
 				{this.state.logged ? (
 					<Redirect to={`/users/${this.props.currentUser._id}`} />
 				) : (
@@ -72,7 +72,6 @@ const RegisterForm = ({
 			onChange={e => changeHandler(e)}
 			type='text'
 			name='username'
-			placeholder='username'
 			value={username}
 		/>
 		<br />
@@ -81,7 +80,6 @@ const RegisterForm = ({
 			onChange={e => changeHandler(e)}
 			type='password'
 			name='password'
-			placeholder='password'
 			value={password}
 		/>
 		<br />
@@ -90,7 +88,6 @@ const RegisterForm = ({
 			onChange={e => changeHandler(e)}
 			type='text'
 			name='email'
-			placeholder='email'
 			value={email}
 		/>
 		<br />
