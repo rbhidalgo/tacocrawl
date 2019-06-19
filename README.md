@@ -15,12 +15,12 @@ I created this app with mobile first in mind and responsiveness to any device.
 <img src="./tacocrawlmobile.jpg">
 
 ## Built With
-MongoDB
-Express
-React
-Node.js
-CSS3
-Styled Components
+MongoDB<br/>
+Express<br/>
+React<br/>
+Node.js<br/>
+CSS3<br/>
+Styled Components<br/>
 Yelp API
 
 ## Future Updates
