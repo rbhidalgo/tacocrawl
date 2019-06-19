@@ -1,10 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Heading from '../styles/Heading';
 import ParentContainer from '../styles/ParentContainer';
 import { NavLink } from 'react-router-dom'
 import * as routes from '../../constants/routes'
-import Button from '../styles/Button';
 import SubmitBut from '../styles/SubmitBut';
 
 const Home = () => {
