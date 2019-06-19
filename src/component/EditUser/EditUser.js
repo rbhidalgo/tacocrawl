@@ -12,6 +12,8 @@ const EditUser = (props) =>  {
     return (
       <div>
         <br/>
+        <hr></hr>
+        <br/>
         <h4>edit your profile</h4>
         <form onSubmit={onSubmit}>
           <label>

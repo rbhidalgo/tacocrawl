@@ -15,11 +15,10 @@ class MapContainer extends Component {
 	};
 
 	render() {
-		console.log(this.props.random);
 		return (
 			<div>
-				<h1>Map Container</h1>
-				<div style={{ height: "50vh", width: "90%" }}>
+				<hr />
+				<div style={{ height: "50vh", width: "100%" }}>
 					<GoogleMapReact
 						bootstrapURLKeys={{
 							key: "AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"
