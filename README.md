@@ -1,5 +1,5 @@
 ## LA Taco Crawl
-[Click here to view the site](https://la-taco-crawl.herokuapp.com/)
+<a href="https://la-taco-crawl.herokuapp.com/" target="_blank">Click here to view the live site</a>
 
 ## Client Experience
 <ul>
@@ -12,7 +12,7 @@
 ## Mobile First
 I created this app with mobile first in mind and responsiveness to any device.
 
-<img src="./tacocrawlmobile.jpg">
+<img src="https://github.com/rbhidalgo/tacocrawl/blob/master/public/images/tacocrawlmobile.jpg" height="300px">
 
 ## Built With
 MongoDB<br/>
@@ -24,6 +24,6 @@ Styled Components<br/>
 Yelp API
 
 ## Future Updates
-Add more locations
-Further styling
+Add more locations <br/>
+Further styling<br/>
 Add a LA Taco Crawl approved seal to locations i've visited and approve of.
