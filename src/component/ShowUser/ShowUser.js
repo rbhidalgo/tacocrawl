@@ -100,7 +100,7 @@ class ShowUser extends Component {
 
 	render() {
 		return (
-			<div style={{ marginTop: "10vh", textAlign: "center" }}>
+			<div style={{ marginTop: "15vh", textAlign: "center" }}>
 				<h1>Hello, {this.state.user.username}</h1><br/>
         <h3>your current crawls</h3><br/>
 				{this.state.user.locations &&
