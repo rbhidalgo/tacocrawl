@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 
-const AnyReactComponent = ({ image }) => (
+const MapPin = ({ image }) => (
 	<div>{<img className='pin' src={image} />}</div>
 );
 
@@ -18,7 +18,7 @@ class MapContainer extends Component {
 		return (
 			<div>
 				<hr />
-				<div style={{ height: "50vh", width: "100%" }}>
+				<div style={{ height: "50vh", width: "50vw" }}>
 					<GoogleMapReact
 						bootstrapURLKeys={{
 							key: "AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"
@@ -26,7 +26,7 @@ class MapContainer extends Component {
 						defaultCenter={this.props.center}
 						defaultZoom={this.props.zoom}>
 						{this.props.random.map((location, i) => (
-							<AnyReactComponent
+							<MapPin
 								key={i}
 								lat={location.coordinates.latitude}
 								lng={location.coordinates.longitude}
