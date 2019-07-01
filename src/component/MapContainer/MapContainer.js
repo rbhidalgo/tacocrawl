@@ -23,7 +23,7 @@ class MapContainer extends Component {
 				<div style={{ height: "50vh", width: "50vw" }}>
 					<GoogleMapReact
 						bootstrapURLKeys={{
-							key: API_KEY
+							key: "AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"
 						}}
 						defaultCenter={this.props.center}
 						defaultZoom={this.props.zoom}>
