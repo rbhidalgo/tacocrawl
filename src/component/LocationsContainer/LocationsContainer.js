@@ -31,7 +31,7 @@ class Locations extends Component {
 
 			// const response = await fetch("api/v1/losangeles");
 			const locationsParsed = await search.json();
-			console.log(locationsParsed);
+			// console.log(locationsParsed);
 			const shuffledArray = await this.shuffleArray(locationsParsed.data);
 			this.setState({
 				locations: locationsParsed.data,
@@ -112,7 +112,6 @@ class Locations extends Component {
 	};
 
 	toggleOff = e => {
-		console.log(e.target.innerText);
 		this.setState({
 			toggle: false,
 			location: e.target.innerText,
@@ -127,7 +126,6 @@ class Locations extends Component {
 	};
 
 	toggleOffNumber = e => {
-		console.log(e.target.innerText);
 		this.setState({
 			toggleNumber: false,
 			numberOfLocations: e.target.innerText,
