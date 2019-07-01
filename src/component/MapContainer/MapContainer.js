@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 
-const API_KEY = process.env.MAP_API_KEY;
+const API_KEY = "AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg";
 
 const MapPin = ({ image }) => (
 	<div>{<img className='pin' src={image} />}</div>
