@@ -28,10 +28,7 @@ class Locations extends Component {
 					"Content-type": "application/json"
 				}
 			});
-
-			// const response = await fetch("api/v1/losangeles");
 			const locationsParsed = await search.json();
-			// console.log(locationsParsed);
 			const shuffledArray = await this.shuffleArray(locationsParsed.data);
 			this.setState({
 				locations: locationsParsed.data,
