@@ -28,11 +28,28 @@ const Home = () => {
 						Hollywood • Long Beach • Whittier • Los Angeles • East LA • Downtown
 						LA • Historic South Central • Hollywood • Long Beach • Whittier •
 						Los Angeles • East LA • Downtown LA • Historic South Central •
-						Hollywood • Long Beach • Whittier • Los Angeles • East LA • Downtown LA • Historic South Central
+						Hollywood • Long Beach • Whittier • Los Angeles • East LA • Downtown
+						LA • Historic South Central Los Angeles • East LA • Downtown LA •
+						Historic South Central • Hollywood • Long Beach • Whittier • Los
+						Angeles • East LA • Downtown LA • Historic South Central • Hollywood
+						• Long Beach • Whittier • Los Angeles • East LA • Downtown LA •
+						Historic South Central • Hollywood • Long Beach • Whittier • Los
+						Angeles • East LA • Downtown LA • Historic South Central Los Angeles
+						• East LA • Downtown LA • Historic South Central • Hollywood • Long
+						Beach • Whittier • Los Angeles • East LA • Downtown LA • Historic
+						South Central • Hollywood • Long Beach • Whittier • Los Angeles •
+						East LA • Downtown LA • Historic South Central • Hollywood • Long
+						Beach • Whittier • Los Angeles • East LA • Downtown LA • Historic
+						South Central Los Angeles • East LA • Downtown LA • Historic South
+						Central • Hollywood • Long Beach • Whittier • Los Angeles • East LA
+						• Downtown LA • Historic South Central • Hollywood • Long Beach •
+						Whittier • Los Angeles • East LA • Downtown LA • Historic South
+						Central • Hollywood • Long Beach • Whittier • Los Angeles • East LA
+						• Downtown LA • Historic South Central
 					</p>
 				</div>
 				<div className='button-but'>
-					<SubmitBut>
+					<SubmitBut className='crawl-btn'>
 						<NavLink to={routes.LOCATIONS} activeClassName='selected'>
 							Let's Crawl!
 						</NavLink>

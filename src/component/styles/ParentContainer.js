@@ -49,9 +49,13 @@ margin-top: 125px;
 }
 
 .button-but {
-    position:absolute;
-    top: 70vh;
-    left: 25vw;
+    position: relative;
+}
+
+.crawl-btn {
+    left: 50%;
+    top: 50%;
+    position: absolute;
 }
 
 `;
