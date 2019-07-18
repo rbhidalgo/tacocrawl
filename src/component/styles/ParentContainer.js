@@ -30,7 +30,8 @@ margin-top: 125px;
 }
 
 .button-container {
-    width: 100%;
+    width: 100vw;
+    height: 15vh;
 }
 
 .bottom-text {
@@ -43,19 +44,20 @@ margin-top: 125px;
     overflow: hidden;
     text-overflow: clip;  
     position: absolute;
-    margin: -2vh auto;
+    margin: 0 auto;
     height: 15vh;
     width: 100%;
 }
 
 .button-but {
-    position: relative;
-}
+    display: flex;
+    height: 100%;
+    z-index: 90;}
 
 .crawl-btn {
-    left: 50%;
-    top: 50%;
-    position: absolute;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 `;

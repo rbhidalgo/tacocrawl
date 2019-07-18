@@ -21,7 +21,7 @@ height: 225px;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    // display: inline-block;
 
   }
   
