@@ -21,15 +21,12 @@ height: 225px;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
-    // display: inline-block;
-
   }
   
   a:hover, a:active {
     background-color: #FF009D;
     color: white;
     border-bottom: 2px solid yellow;
-
   }
 
   img {

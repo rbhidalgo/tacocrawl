@@ -46,7 +46,7 @@ class App extends Component {
 	render() {
 		const { currentUser, doLogout, sideMenuOpen } = this.state;
 		return (
-			<div style={{ height: "100%" }}>
+			<div className='parent-container'>
 				<NavBar
 					currentUser={currentUser}
 					doLogout={doLogout}
@@ -65,7 +65,7 @@ class App extends Component {
 							exact
 							path={routes.LOCATIONS}
 							render={() => (
-								<LocationsContainer 
+								<LocationsContainer
 									currentUser={currentUser}
 									doSetCurrentUser={this.doSetCurrentUser}
 								/>
@@ -85,7 +85,7 @@ class App extends Component {
 							exact
 							path={routes.REGISTER}
 							render={() => (
-								<Register 
+								<Register
 									currentUser={this.state.currentUser}
 									doSetCurrentUser={this.doSetCurrentUser}
 								/>

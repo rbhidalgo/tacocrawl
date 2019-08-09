@@ -30,34 +30,46 @@ margin-top: 125px;
 }
 
 .button-container {
-    width: 100vw;
-    height: 15vh;
+    width: 99vw;
+    height: 100%;
+    position: relative;
 }
 
 .bottom-text {
     color: #FF009D;
-    font-size: 20px;
-    font-family: hwt-republic-gothic-outline, sans-serif;
+    font-size: 72px;
+    font-family: hwt-republic-gothic-outline,sans-serif;
     font-weight: 400;
     font-style: normal;
-    text-align: justify;  
+    text-align: justify;
     overflow: hidden;
-    text-overflow: clip;  
-    position: absolute;
+    text-overflow: clip;
     margin: 0 auto;
-    height: 15vh;
-    width: 100%;
+    z-index: -1;
+    text-align: center;
 }
 
 .button-but {
-    display: flex;
-    height: 100%;
-    z-index: 90;}
+    z-index: 90;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
 
 .crawl-btn {
     align-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+.marquee {
+    overflow: hidden;
+}
+
+.marquee p {
+    animation:  moveLeft 250s infinite;
+    display: block;
 }
 
 `;

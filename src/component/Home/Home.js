@@ -1,11 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import ParentContainer from "../styles/ParentContainer";
 import { NavLink } from "react-router-dom";
 import * as routes from "../../constants/routes";
 import SubmitBut from "../styles/SubmitBut";
 
-const Home = () => {
+class Home extends Component {
+
+
+	
+makeMarquee = () => {
+	const title = `Los Angeles • East LA • Downtown LA • Historic South Central •
+	Hollywood • Long Beach • Whittier`
+	return new Array(50).fill(title).join(' • ')
+  }
+  
+render(){
 	return (
 		<ParentContainer>
 			<div className='home-image'>
@@ -22,30 +32,9 @@ const Home = () => {
 				<br />
 			</div>
 			<div className='button-container'>
-			<div className='bottom-text'>
+			<div className='bottom-text marquee'>
 				<p>
-					Los Angeles • East LA • Downtown LA • Historic South Central •
-					Hollywood • Long Beach • Whittier • Los Angeles • East LA • Downtown
-					LA • Historic South Central • Hollywood • Long Beach • Whittier •
-					Los Angeles • East LA • Downtown LA • Historic South Central •
-					Hollywood • Long Beach • Whittier • Los Angeles • East LA • Downtown
-					LA • Historic South Central Los Angeles • East LA • Downtown LA •
-					Historic South Central • Hollywood • Long Beach • Whittier • Los
-					Angeles • East LA • Downtown LA • Historic South Central • Hollywood
-					• Long Beach • Whittier • Los Angeles • East LA • Downtown LA •
-					Historic South Central • Hollywood • Long Beach • Whittier • Los
-					Angeles • East LA • Downtown LA • Historic South Central Los Angeles
-					• East LA • Downtown LA • Historic South Central • Hollywood • Long
-					Beach • Whittier • Los Angeles • East LA • Downtown LA • Historic
-					South Central • Hollywood • Long Beach • Whittier • Los Angeles •
-					East LA • Downtown LA • Historic South Central • Hollywood • Long
-					Beach • Whittier • Los Angeles • East LA • Downtown LA • Historic
-					South Central Los Angeles • East LA • Downtown LA • Historic South
-					Central • Hollywood • Long Beach • Whittier • Los Angeles • East LA
-					• Downtown LA • Historic South Central • Hollywood • Long Beach •
-					Whittier • Los Angeles • East LA • Downtown LA • Historic South
-					Central • Hollywood • Long Beach • Whittier • Los Angeles • East LA
-					• Downtown LA • Historic South Central
+					{this.makeMarquee()}
 				</p>
 			</div>
 				<div className='button-but'>
@@ -58,6 +47,7 @@ const Home = () => {
 			</div>
 		</ParentContainer>
 	);
+}
 };
 
 export default withRouter(Home);
