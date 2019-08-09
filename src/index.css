@@ -30,12 +30,12 @@ body {
   position: absolute;
   z-index: -1;
   width: 100vw;
-  animation: grow 8000ms 2000ms infinite ease-in-out;
+  /* animation: grow 8000ms 2000ms infinite ease-in-out; */
 }
 
-.stars-svg {
+/* .stars-svg {
   animation: grow 8000ms 2000ms infinite ease-in-out;
-}
+} */
 
 @keyframes grow {
   0% {
