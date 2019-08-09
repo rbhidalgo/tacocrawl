@@ -71,7 +71,7 @@ margin-top: 10vh;
 }
 
 .marquee p {
-    animation:  moveLeft 250s infinite;
+    animation:  moveLeft 350s infinite;
     display: block;
     white-space:  nowrap;
 }
