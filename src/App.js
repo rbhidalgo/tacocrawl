@@ -58,7 +58,7 @@ class App extends Component {
 					show={sideMenuOpen}
 				/>
 				{sideMenuOpen && <Backdrop click={this.backdropClickHandler} />}
-				<main style={{ marginTop: "64px" }}>
+				<main>
 					<Switch>
 						<Route exact path={routes.HOME} render={() => <Home />} />
 						<Route

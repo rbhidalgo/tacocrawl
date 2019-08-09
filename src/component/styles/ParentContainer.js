@@ -11,7 +11,7 @@ margin-top: 10vh;
 .p-main {
     font-size: 3vh;
     margin: 2vh auto;
-    padding: 2vw;
+    padding: 1vw;
     color: #049DD8;
     width: 75%;
     text-align: center;
@@ -22,7 +22,7 @@ margin-top: 10vh;
 }
 
 .home-image {
-    height: 50vh;
+    height: 48vh;
     margin: 0 auto;
 }
 
@@ -34,6 +34,7 @@ margin-top: 10vh;
     width: 100vw;
     height: 100%;
     position: relative;
+    padding: 2vh 0;
 }
 
 .bottom-text {
@@ -84,11 +85,17 @@ margin-top: 10vh;
     }
   }
 
+.intro-text {
+    background-color: #FFFCF7;
+    height: 20vh;
+}
+
 .intro-text > h1 {
     font-family: giulia, sans-serif;
     font-size: 48px;
     text-align: center;
     color: #049DD8;
+    padding: 1vh 1vw;
 }
 
 `;
