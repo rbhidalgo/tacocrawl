@@ -6,7 +6,7 @@ flex-direction: column;
 align-items: center;
 align-content: center;
 justify-content: space-between;
-margin-top: 125px;
+margin-top: 15vh;
 
 .p-main {
     font-size: 20px;
@@ -30,7 +30,7 @@ margin-top: 125px;
 }
 
 .button-container {
-    width: 99vw;
+    width: 100vw;
     height: 100%;
     position: relative;
 }
@@ -65,12 +65,23 @@ margin-top: 125px;
 
 .marquee {
     overflow: hidden;
+    font-size: 8vw;
 }
 
 .marquee p {
     animation:  moveLeft 250s infinite;
     display: block;
+    white-space:  nowrap;
 }
+
+@keyframes moveLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-3000vw);
+    }
+  }
 
 `;
 
