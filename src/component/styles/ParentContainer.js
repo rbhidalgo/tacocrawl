@@ -6,11 +6,11 @@ flex-direction: column;
 align-items: center;
 align-content: center;
 justify-content: space-between;
-margin-top: 15vh;
+margin-top: 10vh;
 
 .p-main {
-    font-size: 20px;
-    margin: 3vh auto;
+    font-size: 3vh;
+    margin: 2vh auto;
     padding: 2vw;
     color: #049DD8;
     width: 75%;
@@ -21,12 +21,13 @@ margin-top: 15vh;
     background-color: #FFED03;
 }
 
+.home-image {
+    height: 50vh;
+    margin: 0 auto;
+}
+
 .home-image img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        border-radius: 15px;
+    height: 100%;
 }
 
 .button-container {
@@ -82,6 +83,13 @@ margin-top: 15vh;
       transform: translateX(-3000vw);
     }
   }
+
+.intro-text > h1 {
+    font-family: giulia, sans-serif;
+    font-size: 48px;
+    text-align: center;
+    color: #049DD8;
+}
 
 `;
 

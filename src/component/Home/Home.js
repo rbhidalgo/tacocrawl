@@ -14,20 +14,21 @@ makeMarquee = () => {
 	Hollywood • Long Beach • Whittier`
 	return new Array(50).fill(title).join(' • ')
   }
-  
+
 render(){
 	return (
 		<ParentContainer>
 			<div className='home-image'>
-				<img src='../public/images/tacoonblack2.jpg' />
+				<img src='../public/images/taco-crawling-char.png' />
 			</div>
-			<div>
+			<div className="intro-text">
+				<h1>Taco Crawling:<br /></h1>
 				<p className='p-main'>
-					“ Go eat tacos from place to place.{" "}
+					“Go eat tacos from place to place.{" "}
 					<span className='spanHighlight'>Eat so much,</span> by the time you
 					get to the last location{" "}
 					<span className='spanHighlight'> you’ll be crawling</span> from eating
-					and drinking so much ”
+					and drinking so much”
 				</p>
 				<br />
 			</div>
