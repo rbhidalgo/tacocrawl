@@ -47,6 +47,7 @@ class App extends Component {
 		const { currentUser, doLogout, sideMenuOpen } = this.state;
 		return (
 			<div className='parent-container'>
+				<span className="bkg-shape"></span>
 				<NavBar
 					currentUser={currentUser}
 					doLogout={doLogout}
