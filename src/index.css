@@ -23,17 +23,17 @@ body {
 }
 
 .bkg-shape {
-  background-image: url(/static/media/tacopattern3.9988bad6.svg);
+  background-image: url(tacopattern3.svg);
   background-attachment: fixed;
   background-repeat: repeat;
   height: 100vh;
   position: absolute;
   z-index: -1;
   width: 100vw;
-  /* animation: grow 8000ms 2000ms infinite ease-in-out; */
+  animation: grow 8000ms 2000ms infinite ease-in-out;
 }
 
-.KUsePattern1 {
+.stars-svg {
   animation: grow 8000ms 2000ms infinite ease-in-out;
 }
 
