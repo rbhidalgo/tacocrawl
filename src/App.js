@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
-// import { ReactComponent as BkgTacoStarBeer } from "./tacopattern3.svg";
-// import styled, { keyframes } from "styled-components";
+
 
 import NavBar from "./component/NavBar/NavBar";
 import Login from "./component/Login/Login";
@@ -14,33 +13,6 @@ import Backdrop from "./component/Backdrop/Backdrop";
 
 import * as routes from "./constants/routes";
 import "./index.css";
-
-
-// const grow = keyframes`
-//   0% {
-//     transform: scale(.1);
-//   }
-
-//   50% {
-//     transform: scale(.12);
-//   }
-//   100% {
-// 	transform: scale(.1)
-//   }
-// `;
-
-// const StyledBkg = styled(BkgTacoStarBeer)`
-// background-image: url(/public/images/tacopattern3.svg);
-// background-attachment: fixed;
-// background-repeat: repeat;
-// height: 100vh;
-// position: absolute;
-// z-index: -1;
-// width: 100vw;
-//   .stars-svg {
-//     animation: ${grow} 2000ms 2000ms infinite ease-in-out;
-//   }
-// `;
 
 
 class App extends Component {
