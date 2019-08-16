@@ -135,7 +135,7 @@ class Locations extends Component {
 		return (
 			<CrawlContainer>
 				<div className="location-container" onClick={toggleHandler}>
-					<h1>1</h1>
+					<h1>1. </h1>
 					<h2 className="choose-location">{this.state.menuLocation}</h2>
 				</div>
 				{this.state.toggle && (
@@ -150,9 +150,8 @@ class Locations extends Component {
 					</ul>
 				)}
 				<br />
-				<div>
 					<div className="number-container" onClick={toggleHandlerNumber}>
-						<h1>2</h1>
+						<h1>2. </h1>
 						<h2 className="choose-number">{this.state.numbTextLocations}</h2>
 					</div>
 					{this.state.toggleNumber && (
@@ -166,8 +165,9 @@ class Locations extends Component {
 							})}
 						</ul>
 					)}
-					<button onClick={this.getLocations}>Submit</button>
-				</div>
+					<div className="btn-crawl" onClick={this.getLocations}>
+						<h1>3. </h1>
+						<h2 className="lets-crawl">Let's Crawl!</h2></div>
 				<br />
 				<div>
 					{this.props.currentUser && this.state.location !== "" ? (
