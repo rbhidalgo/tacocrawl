@@ -7,7 +7,9 @@ margin: 0 auto;
 padding: 25px;
 width: 75vw;
 background-color: #ffffffa6;
-margin-top: 150px;
+margin-top: 10vh;
+text-align: center;
+color: #049DD8;
 
 .pMain {
     font-size: 25px;
@@ -24,6 +26,15 @@ li {
     margin: 0;
     padding: 0;
   }
+
+.choose-location,
+.choose-number {
+    border-bottom: 5px solid #FFED03;
+    display: inline-block;
+    line-height: 1.5;
+    font-size: 32px;
+}
+
 `;
 
 export default CrawlContainer;

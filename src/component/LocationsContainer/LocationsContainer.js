@@ -133,25 +133,27 @@ class Locations extends Component {
 		const { toggleHandler, toggleHandlerNumber } = this;
 		const random = this.state.randomCrawl;
 		return (
-			<CrawlContainer style={{ marginTop: "10vh", textAlign: "center" }}>
-				<div>
-					<div onClick={toggleHandler}><h2>{this.state.menuLocation}</h2></div>
-					{this.state.toggle && (
-						<ul className='dropDown'>
-							{this.location().map((l, i) => {
-								return (
-									<li onClick={this.toggleOff} key={i}>
-										{l}
-									</li>
-								);
-							})}
-						</ul>
-					)}
+			<CrawlContainer>
+				<div onClick={toggleHandler}>
+					<h1>1</h1>
+					<h2 className="choose-location">{this.state.menuLocation}</h2>
 				</div>
-				<br/>
+				{this.state.toggle && (
+					<ul className='dropDown'>
+						{this.location().map((l, i) => {
+							return (
+								<li onClick={this.toggleOff} key={i}>
+									{l}
+								</li>
+							);
+						})}
+					</ul>
+				)}
+				<br />
 				<div>
 					<div onClick={toggleHandlerNumber}>
-						<h2>{this.state.numbTextLocations}</h2>
+						<h1>2</h1>
+						<h2 className="choose-number">{this.state.numbTextLocations}</h2>
 					</div>
 					{this.state.toggleNumber && (
 						<ul className='dropDown'>
@@ -166,16 +168,19 @@ class Locations extends Component {
 					)}
 					<button onClick={this.getLocations}>Submit</button>
 				</div>
-				<br/>
+				<br />
 				<div>
 					{this.props.currentUser && this.state.location !== "" ? (
-						<button onClick={() => this.addAllCrawl(random)}>Add Entire Crawl</button>
+						<button onClick={() => this.addAllCrawl(random)}>
+							Add Entire Crawl
+						</button>
 					) : (
 						<h3>
 							<span className='spanHighlight'>log-in to add a crawl</span>
 						</h3>
 					)}
-					<h2>{this.state.menuLocation} Taco Crawl</h2><br/>
+					<h2>{this.state.menuLocation} Taco Crawl</h2>
+					<br />
 					{random.map((location, i) => (
 						<li key={i}>
 							<a href={location.url}>{location.name}</a>
@@ -202,7 +207,7 @@ class Locations extends Component {
 					))}
 				</div>
 				<div>
-					<MapContainer random={random}/>
+					<MapContainer random={random} />
 				</div>
 			</CrawlContainer>
 		);
