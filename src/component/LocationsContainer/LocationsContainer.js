@@ -134,7 +134,7 @@ class Locations extends Component {
 		const random = this.state.randomCrawl;
 		return (
 			<CrawlContainer>
-				<div onClick={toggleHandler}>
+				<div className="location-container" onClick={toggleHandler}>
 					<h1>1</h1>
 					<h2 className="choose-location">{this.state.menuLocation}</h2>
 				</div>
@@ -151,7 +151,7 @@ class Locations extends Component {
 				)}
 				<br />
 				<div>
-					<div onClick={toggleHandlerNumber}>
+					<div className="number-container" onClick={toggleHandlerNumber}>
 						<h1>2</h1>
 						<h2 className="choose-number">{this.state.numbTextLocations}</h2>
 					</div>

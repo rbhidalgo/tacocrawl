@@ -35,6 +35,14 @@ li {
     font-size: 32px;
 }
 
+.location-container,
+.number-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+}
+
 `;
 
 export default CrawlContainer;
