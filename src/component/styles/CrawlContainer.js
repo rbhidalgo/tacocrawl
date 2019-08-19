@@ -36,7 +36,7 @@ li {
 .choose-location,
 .choose-number,
 .lets-crawl {
-    border-bottom: 5px solid #FFED03;
+    border-bottom: 7px solid #FFED03;
     display: inline-block;
     line-height: 1.5;
     font-size: 32px;
@@ -55,6 +55,11 @@ h1 {
     flex-direction: row;
     align-items: center;
     padding-left: 20vw;
+}
+
+li {
+    text-align: left;
+    padding-left: 25vw;
 }
 
 `;
