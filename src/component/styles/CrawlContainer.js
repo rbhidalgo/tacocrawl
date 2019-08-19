@@ -43,6 +43,7 @@ li {
     cursor: pointer;
 }
 
+
 h1 {
     font-size: 72px;
     padding: 0 10px;

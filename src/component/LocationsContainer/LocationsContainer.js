@@ -9,7 +9,7 @@ class Locations extends Component {
 		randomCrawl: [],
 		location: "",
 		menuLocation: "Choose Location",
-		toggle: false,
+		toggle: null,
 		toggleNumber: false,
 		numberOfLocations: Number,
 		numbTextLocations: "How many locations?"
@@ -102,9 +102,9 @@ class Locations extends Component {
 	};
 
 	toggleHandler = () => {
-		this.setState({
-			toggle: true
-		});
+		this.setState( prevState => ({
+			toggle: !prevState.toggle
+		}));
 	};
 
 	toggleOff = e => {
