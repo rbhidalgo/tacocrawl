@@ -60,6 +60,7 @@ h1 {
 li {
     text-align: left;
     padding-left: 25vw;
+    cursor: pointer;
 }
 
 `;
