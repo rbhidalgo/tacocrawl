@@ -10,7 +10,7 @@ class Locations extends Component {
 		location: "",
 		menuLocation: "Choose Location",
 		toggle: null,
-		toggleNumber: false,
+		toggleNumber: null,
 		numberOfLocations: Number,
 		numbTextLocations: "How many locations?"
 	};
