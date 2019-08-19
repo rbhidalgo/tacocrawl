@@ -63,6 +63,16 @@ li {
     cursor: pointer;
 }
 
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid #FFED03;
+    padding-left: 20px;
+    margin-left: 1vw;
+  }
+
 `;
 
 export default CrawlContainer;

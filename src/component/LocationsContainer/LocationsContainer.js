@@ -165,9 +165,12 @@ class Locations extends Component {
 							})}
 						</ul>
 					)}
+					<br />
 					<div className="btn-crawl" onClick={this.getLocations}>
 						<h1>3. </h1>
-						<h2 className="lets-crawl">Let's Crawl!</h2></div>
+						<h2 className="lets-crawl">Let's Crawl!</h2>
+						<div className="arrow-right"></div>
+						</div>
 				<br />
 				<div>
 					{this.props.currentUser && this.state.location !== "" ? (
