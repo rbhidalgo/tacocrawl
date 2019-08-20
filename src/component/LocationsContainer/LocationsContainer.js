@@ -117,7 +117,7 @@ class Locations extends Component {
 
 	toggleHandlerNumber = () => {
 		this.setState( prevState => ({
-			toggleNumber: !prevState.toggleOffNumber
+			toggleNumber: !prevState.toggleNumber
 		}));
 	};
 
