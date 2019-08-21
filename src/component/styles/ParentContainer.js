@@ -98,7 +98,22 @@ margin-top: 10vh;
     padding: 1vh 1vw;
 }
 
+@media (max-width: 769px) {
+    .home-image {
+        height: 35vh;
+        margin: 0 auto;
+    }
+    
+    .home-image img {
+        height: 100%;
+    }
+
+    .intro-text {
+        height: 35vh;
+    }
+    
+  }
+
 `;
 
 export default ParentContainer;
-
