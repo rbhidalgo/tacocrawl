@@ -3,6 +3,8 @@ import { withRouter } from "react-router-dom";
 import MapContainer from "../MapContainer/MapContainer";
 import CrawlContainer from "../styles/CrawlContainer";
 
+import "./locationContainer.css"
+
 class Locations extends Component {
 	state = {
 		locations: [],
@@ -102,7 +104,7 @@ class Locations extends Component {
 	};
 
 	toggleHandler = () => {
-		this.setState( prevState => ({
+		this.setState(prevState => ({
 			toggle: !prevState.toggle
 		}));
 	};
@@ -116,7 +118,7 @@ class Locations extends Component {
 	};
 
 	toggleHandlerNumber = () => {
-		this.setState( prevState => ({
+		this.setState(prevState => ({
 			toggleNumber: !prevState.toggleNumber
 		}));
 	};
@@ -133,10 +135,10 @@ class Locations extends Component {
 		const { toggleHandler, toggleHandlerNumber } = this;
 		const random = this.state.randomCrawl;
 		return (
-			<CrawlContainer>
-				<div className="location-container" onClick={toggleHandler}>
+			<div className="crawlContainer">
+				<div className='location-container' onClick={toggleHandler}>
 					<h1>1. </h1>
-					<h2 className="choose-location">{this.state.menuLocation}</h2>
+					<h2 className='choose-location'>{this.state.menuLocation}</h2>
 				</div>
 				{this.state.toggle && (
 					<ul className='dropDown'>
@@ -150,27 +152,27 @@ class Locations extends Component {
 					</ul>
 				)}
 				<br />
-					<div className="number-container" onClick={toggleHandlerNumber}>
-						<h1>2. </h1>
-						<h2 className="choose-number">{this.state.numbTextLocations}</h2>
-					</div>
-					{this.state.toggleNumber && (
-						<ul className='dropDown'>
-							{this.numberOfLocations().map((n, i) => {
-								return (
-									<li onClick={this.toggleOffNumber} key={i}>
-										{n}
-									</li>
-								);
-							})}
-						</ul>
-					)}
-					<br />
-					<div className="btn-crawl" onClick={this.getLocations}>
-						<h1>3. </h1>
-						<h2 className="lets-crawl">Let's Crawl!</h2>
-						<div className="arrow-right"></div>
-						</div>
+				<div className='number-container' onClick={toggleHandlerNumber}>
+					<h1>2. </h1>
+					<h2 className='choose-number'>{this.state.numbTextLocations}</h2>
+				</div>
+				{this.state.toggleNumber && (
+					<ul className='dropDown'>
+						{this.numberOfLocations().map((n, i) => {
+							return (
+								<li onClick={this.toggleOffNumber} key={i}>
+									{n}
+								</li>
+							);
+						})}
+					</ul>
+				)}
+				<br />
+				<div className='btn-crawl' onClick={this.getLocations}>
+					<h1>3. </h1>
+					<h2 className='lets-crawl'>Let's Crawl!</h2>
+					<div className='arrow-right'></div>
+				</div>
 				<br />
 				<div>
 					{this.props.currentUser && this.state.location !== "" ? (
@@ -209,10 +211,8 @@ class Locations extends Component {
 						</li>
 					))}
 				</div>
-				<div>
 					<MapContainer random={random} />
-				</div>
-			</CrawlContainer>
+			</div>
 		);
 	}
 }

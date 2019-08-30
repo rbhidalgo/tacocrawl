@@ -6,8 +6,6 @@ import SubmitBut from "../styles/SubmitBut";
 import "./home.css";
 
 class Home extends Component {
-
-
 	
 makeMarquee = () => {
 	const title = `Los Angeles • East LA • Downtown LA • Historic South Central •
