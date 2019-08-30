@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import ParentContainer from "../styles/ParentContainer";
 import { NavLink } from "react-router-dom";
 import * as routes from "../../constants/routes";
 import SubmitBut from "../styles/SubmitBut";
+import "./home.css";
 
 class Home extends Component {
 
@@ -17,7 +17,7 @@ makeMarquee = () => {
 
 render(){
 	return (
-		<ParentContainer>
+		<div className="parentContainer">
 			<div className='home-image'>
 				<img src='../public/images/taco-crawling-char.png' />
 			</div>
@@ -46,7 +46,7 @@ render(){
 					</SubmitBut>
 				</div>
 			</div>
-		</ParentContainer>
+		</div>
 	);
 }
 };
