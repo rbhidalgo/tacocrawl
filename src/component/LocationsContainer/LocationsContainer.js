@@ -13,7 +13,8 @@ class Locations extends Component {
 		toggle: null,
 		toggleNumber: null,
 		numberOfLocations: Number,
-		numbTextLocations: "How many locations?"
+		numbTextLocations: "How many locations?",
+		highlight: false
 	};
 	componentDidMount() {
 		this.getLocations();
@@ -104,7 +105,8 @@ class Locations extends Component {
 
 	toggleHandler = () => {
 		this.setState(prevState => ({
-			toggle: !prevState.toggle
+			toggle: !prevState.toggle,
+			highlight: !prevState.highlight
 		}));
 	};
 
@@ -131,13 +133,13 @@ class Locations extends Component {
 	};
 
 	render() {
-		const { toggleHandler, toggleHandlerNumber } = this;
+		const { toggleHandler, toggleHandlerNumber} = this;
 		const random = this.state.randomCrawl;
 		return (
 			<div className="crawlContainer">
-				<div className='location-container' onClick={toggleHandler}>
+				<div className='location-container'>
 					<h1>1. </h1>
-					<h2 className='choose-location'>{this.state.menuLocation}</h2>
+					<h2 className={this.state.highlight ? "choose-location highlight-green" : "choose-location"} onClick={toggleHandler}>{this.state.menuLocation}</h2>
 				</div>
 				{this.state.toggle && (
 					<ul className='dropDown'>
@@ -183,7 +185,6 @@ class Locations extends Component {
 							<span className='spanHighlight'>log-in to add a crawl</span>
 						</h3>
 					)}
-					{/* <h2>{this.state.menuLocation}</h2> */}
 					<br />
 					{random.map((location, i) => (
 						<li key={i}>

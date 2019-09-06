@@ -41,6 +41,9 @@ li {
     cursor: pointer;
 }
 
+.highlight-green {
+    border-bottom: 7px solid #49F56B !important;
+}
 
 h1 {
     font-size: 72px;
