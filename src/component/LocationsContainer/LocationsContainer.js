@@ -15,7 +15,9 @@ class Locations extends Component {
 		numberOfLocations: Number,
 		numbTextLocations: "How many locations?",
 		highlight: false,
-		numbHighlight: false
+		numbHighlight: false,
+		crawlHighlight: false,
+		btnColor: false
 	};
 	componentDidMount() {
 		this.getLocations();
@@ -35,7 +37,7 @@ class Locations extends Component {
 			const shuffledArray = await this.shuffleArray(locationsParsed.data);
 			this.setState({
 				locations: locationsParsed.data,
-				randomCrawl: shuffledArray
+				randomCrawl: shuffledArray,
 			});
 		} catch (err) {
 			console.log(err);
@@ -122,7 +124,9 @@ class Locations extends Component {
 	toggleHandlerNumber = () => {
 		this.setState(prevState => ({
 			toggleNumber: !prevState.toggleNumber,
-			numbHighlight: !this.state.numbHighlight
+			numbHighlight: !this.state.numbHighlight,
+			crawlHighlight: !this.state.crawlHighlight,
+			btnColor: !this.state.btnColor
 		}));
 	};
 
@@ -173,8 +177,8 @@ class Locations extends Component {
 				<br />
 				<div className='btn-crawl' onClick={this.getLocations}>
 					<h1>3. </h1>
-					<h2 className='lets-crawl'>Let's Crawl!</h2>
-					<div className='arrow-right'></div>
+					<h2 className={this.state.crawlHighlight ? "lets-crawl highlight-green" : "lets-crawl"}>Let's Crawl!</h2>
+					<div className={this.state.btnColor ? "arrow-right arrow-green" : "arrow-right"}></div>
 				</div>
 				<br />
 				<div>

@@ -39,10 +39,11 @@ li {
     line-height: 1.5;
     font-size: 32px;
     cursor: pointer;
+    transition: border-bottom 1s linear 2s;
 }
 
 .highlight-green {
-    border-bottom: 7px solid #49F56B !important;
+    border-bottom: 7px solid #49F56B;
 }
 
 h1 {
@@ -73,4 +74,9 @@ li {
     border-left: 25px solid #FFED03;
     padding-left: 20px;
     margin-left: 1vw;
+    transition: border-left 1s linear 2s;
+  }
+
+  .arrow-green {
+    border-left: 25px solid #49F56B;
   }
