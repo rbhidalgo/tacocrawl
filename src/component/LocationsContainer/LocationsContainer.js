@@ -201,9 +201,8 @@ class Locations extends Component {
 							<br />
 							{location.location.display_address[0]}. {location.location.display_address[1]} {location.location.display_address[2]} <br />
 							<h3>
-								rating: <span className='spanHighlight'>{location.rating}</span>
-								Review Count:
-								<span className='spanHighlight'>{location.review_count}</span>
+								rating: <span className='spanHighlight'>{location.rating}</span> | 
+								<span className='spanHighlight'>{location.review_count}</span> reviews
 							</h3>
 							<br />
 							{this.props.currentUser &&
