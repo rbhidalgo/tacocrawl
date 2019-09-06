@@ -183,7 +183,7 @@ class Locations extends Component {
 							<span className='spanHighlight'>log-in to add a crawl</span>
 						</h3>
 					)}
-					<h2>{this.state.menuLocation} Taco Crawl</h2>
+					{/* <h2>{this.state.menuLocation}</h2> */}
 					<br />
 					{random.map((location, i) => (
 						<li key={i}>
