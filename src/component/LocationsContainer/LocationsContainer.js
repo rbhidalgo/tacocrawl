@@ -14,7 +14,8 @@ class Locations extends Component {
 		toggleNumber: null,
 		numberOfLocations: Number,
 		numbTextLocations: "How many locations?",
-		highlight: false
+		highlight: false,
+		numbHighlight: false
 	};
 	componentDidMount() {
 		this.getLocations();
@@ -106,7 +107,7 @@ class Locations extends Component {
 	toggleHandler = () => {
 		this.setState(prevState => ({
 			toggle: !prevState.toggle,
-			highlight: !prevState.highlight
+			highlight: !this.state.highlight
 		}));
 	};
 
@@ -120,7 +121,8 @@ class Locations extends Component {
 
 	toggleHandlerNumber = () => {
 		this.setState(prevState => ({
-			toggleNumber: !prevState.toggleNumber
+			toggleNumber: !prevState.toggleNumber,
+			numbHighlight: !this.state.numbHighlight
 		}));
 	};
 
@@ -137,9 +139,9 @@ class Locations extends Component {
 		const random = this.state.randomCrawl;
 		return (
 			<div className="crawlContainer">
-				<div className='location-container'>
+				<div className='location-container' onClick={toggleHandler}>
 					<h1>1. </h1>
-					<h2 className={this.state.highlight ? "choose-location highlight-green" : "choose-location"} onClick={toggleHandler}>{this.state.menuLocation}</h2>
+					<h2 className={this.state.highlight ? "choose-location highlight-green" : "choose-location"}>{this.state.menuLocation}</h2>
 				</div>
 				{this.state.toggle && (
 					<ul className='dropDown'>
@@ -155,7 +157,7 @@ class Locations extends Component {
 				<br />
 				<div className='number-container' onClick={toggleHandlerNumber}>
 					<h1>2. </h1>
-					<h2 className='choose-number'>{this.state.numbTextLocations}</h2>
+					<h2 className={this.state.numbHighlight ? "choose-number highlight-green" : "choose-number"}>{this.state.numbTextLocations}</h2>
 				</div>
 				{this.state.toggleNumber && (
 					<ul className='dropDown'>
