@@ -27,6 +27,20 @@ const client = yelp.client(process.env.MY_KEY)
    });
  });
 
+ router.post("/", async (req, res) => {
+  client.reviews('gary-danko-san-francisco')
+  .then(response => {
+    const locationReview = response.jsonBody.reviews[0].text
+    res.json({
+      status: 200,
+      data: locationReview
+    })
+    console.log(response.jsonBody.reviews[0].text);
+  }).catch(e => {
+    console.log(e);
+  });
+ })
+
 
 router.put('/', (req, res) => {
   return res.json({data: 'Received a PUT HTTP method'});
