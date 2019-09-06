@@ -39,6 +39,7 @@ class Locations extends Component {
 				locations: locationsParsed.data,
 				randomCrawl: shuffledArray,
 			});
+			console.log(this.state.locations)
 		} catch (err) {
 			console.log(err);
 			return err;
@@ -198,7 +199,7 @@ class Locations extends Component {
 							<br />
 							<img src={location.image_url} width='100px' />
 							<br />
-							{location.location.display_address} <br />
+							{location.location.display_address[0]}. {location.location.display_address[1]} <br />
 							<h3>
 								rating: <span className='spanHighlight'>{location.rating}</span>
 								Review Count:
