@@ -39,7 +39,7 @@ li {
     line-height: 1.5;
     font-size: 32px;
     cursor: pointer;
-    transition: border-bottom 1s linear 2s;
+    transition: border-bottom .3s linear .3s;
 }
 
 .highlight-green {
@@ -74,7 +74,7 @@ li {
     border-left: 25px solid #FFED03;
     padding-left: 20px;
     margin-left: 1vw;
-    transition: border-left 1s linear 2s;
+    transition: border-left .3s linear .3s;
   }
 
   .arrow-green {
