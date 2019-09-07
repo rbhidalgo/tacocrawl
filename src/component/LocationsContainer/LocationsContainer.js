@@ -10,8 +10,8 @@ class Locations extends Component {
 		randomCrawl: [],
 		location: "",
 		menuLocation: "Choose Location",
-		toggle: null,
-		toggleNumber: null,
+		toggle: false,
+		toggleNumber: false,
 		numberOfLocations: Number,
 		numbTextLocations: "How many locations?",
 		highlight: false,
@@ -108,10 +108,10 @@ class Locations extends Component {
 	};
 
 	toggleHandler = () => {
-		this.setState(prevState => ({
-			toggle: !prevState.toggle,
+		this.setState ({
+			toggle: !this.state.toggle,
 			highlight: !this.state.highlight
-		}));
+		});
 	};
 
 	toggleOff = e => {
@@ -123,12 +123,12 @@ class Locations extends Component {
 	};
 
 	toggleHandlerNumber = () => {
-		this.setState(prevState => ({
-			toggleNumber: !prevState.toggleNumber,
+		this.setState({
+			toggleNumber: !this.state.toggleNumber,
 			numbHighlight: !this.state.numbHighlight,
 			crawlHighlight: !this.state.crawlHighlight,
 			btnColor: !this.state.btnColor
-		}));
+		});
 	};
 
 	toggleOffNumber = e => {
