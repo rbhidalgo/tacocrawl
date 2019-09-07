@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import MapContainer from "../MapContainer/MapContainer";
 
 import "./locationContainer.css"
+import RestCard from '../styles/RestCard'
 
 class Locations extends Component {
 	state = {
@@ -182,7 +183,7 @@ class Locations extends Component {
 					<div className={this.state.btnColor ? "arrow-right arrow-green" : "arrow-right"}></div>
 				</div>
 				<br />
-				<div>
+				<RestCard>
 					{this.props.currentUser && this.state.location !== "" ? (
 						<button onClick={() => this.addAllCrawl(random)}>
 							Add Entire Crawl
@@ -216,7 +217,7 @@ class Locations extends Component {
 								)}
 						</li>
 					))}
-				</div>
+				</RestCard>
 					<MapContainer random={random} />
 			</div>
 		);
