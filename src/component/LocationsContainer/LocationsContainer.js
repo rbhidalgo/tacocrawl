@@ -17,7 +17,7 @@ class Locations extends Component {
 		highlight: false,
 		numbHighlight: false,
 		crawlHighlight: false,
-		btnColor: false
+		btnColor: false,
 	};
 	componentDidMount() {
 		this.getLocations();
@@ -39,12 +39,12 @@ class Locations extends Component {
 				locations: locationsParsed.data,
 				randomCrawl: shuffledArray,
 			});
-			console.log(this.state.locations)
 		} catch (err) {
 			console.log(err);
 			return err;
 		}
 	};
+
 
 	shuffleArray(array) {
 		for (let i = array.length - 1; i > 0; i--) {
