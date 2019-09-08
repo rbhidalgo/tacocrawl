@@ -144,6 +144,7 @@ class Locations extends Component {
 		const { toggleHandler, toggleHandlerNumber} = this;
 		const random = this.state.randomCrawl;
 		return (
+			<>
 			<div className="crawlContainer">
 				<div className='location-container' onClick={toggleHandler}>
 					<h1>1. </h1>
@@ -183,6 +184,7 @@ class Locations extends Component {
 					<div className={this.state.btnColor ? "arrow-right arrow-green" : "arrow-right"}></div>
 				</div>
 				<br />
+				</div>
 				<RestCard>
 					{this.props.currentUser && this.state.location !== "" ? (
 						<button onClick={() => this.addAllCrawl(random)}>
@@ -219,7 +221,7 @@ class Locations extends Component {
 					))}
 				</RestCard>
 					<MapContainer random={random} />
-			</div>
+			</>
 		);
 	}
 }
