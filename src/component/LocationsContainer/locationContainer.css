@@ -13,7 +13,7 @@ height: 50vh;
 background-color: #ffffff;
 margin-top: 10vh;
 color: #049DD8;
-align-items: center;
+/* align-items: center; */
 }
 
 .btn-crawl {
@@ -43,7 +43,7 @@ li {
     border-bottom: 7px solid #FFED03;
     display: inline-block;
     line-height: 1.5;
-    font-size: 32px;
+    font-size: 28px;
     cursor: pointer;
     transition: border-bottom .5s linear 1s;
 }
