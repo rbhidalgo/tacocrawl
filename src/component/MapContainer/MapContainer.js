@@ -18,9 +18,9 @@ class MapContainer extends Component {
 
 	render() {
 		return (
-			<div>
+			<>
 				<hr />
-				<div style={{ height: "50vh" }}>
+				<div style={{ height: "50vh", width:"60vw" }}>
 					<GoogleMapReact
 						bootstrapURLKeys={{
 							key: "AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"
@@ -37,7 +37,7 @@ class MapContainer extends Component {
 						))}
 					</GoogleMapReact>
 				</div>
-			</div>
+			</>
 		);
 	}
 }

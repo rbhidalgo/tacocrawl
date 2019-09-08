@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import MapContainer from "../MapContainer/MapContainer";
 
-import "./locationContainer.css"
-import RestCard from '../styles/RestCard'
+import "./locationContainer.css";
+import RestCard from "../styles/RestCard";
 
 class Locations extends Component {
 	state = {
@@ -18,7 +18,7 @@ class Locations extends Component {
 		highlight: false,
 		numbHighlight: false,
 		crawlHighlight: false,
-		btnColor: false,
+		btnColor: false
 	};
 	componentDidMount() {
 		this.getLocations();
@@ -38,14 +38,13 @@ class Locations extends Component {
 			const shuffledArray = await this.shuffleArray(locationsParsed.data);
 			this.setState({
 				locations: locationsParsed.data,
-				randomCrawl: shuffledArray,
+				randomCrawl: shuffledArray
 			});
 		} catch (err) {
 			console.log(err);
 			return err;
 		}
 	};
-
 
 	shuffleArray(array) {
 		for (let i = array.length - 1; i > 0; i--) {
@@ -109,7 +108,7 @@ class Locations extends Component {
 	};
 
 	toggleHandler = () => {
-		this.setState ({
+		this.setState({
 			toggle: !this.state.toggle,
 			highlight: !this.state.highlight
 		});
@@ -141,49 +140,74 @@ class Locations extends Component {
 	};
 
 	render() {
-		const { toggleHandler, toggleHandlerNumber} = this;
+		const { toggleHandler, toggleHandlerNumber } = this;
 		const random = this.state.randomCrawl;
 		return (
 			<>
-			<div className="crawlContainer">
-				<div className='location-container' onClick={toggleHandler}>
-					<h1>1. </h1>
-					<h2 className={this.state.highlight ? "choose-location highlight-green" : "choose-location"}>{this.state.menuLocation}</h2>
-				</div>
-				{this.state.toggle && (
-					<ul className='dropDown'>
-						{this.location().map((l, i) => {
-							return (
-								<li onClick={this.toggleOff} key={i}>
-									{l}
-								</li>
-							);
-						})}
-					</ul>
-				)}
-				<br />
-				<div className='number-container' onClick={toggleHandlerNumber}>
-					<h1>2. </h1>
-					<h2 className={this.state.numbHighlight ? "choose-number highlight-green" : "choose-number"}>{this.state.numbTextLocations}</h2>
-				</div>
-				{this.state.toggleNumber && (
-					<ul className='dropDown'>
-						{this.numberOfLocations().map((n, i) => {
-							return (
-								<li onClick={this.toggleOffNumber} key={i}>
-									{n}
-								</li>
-							);
-						})}
-					</ul>
-				)}
-				<br />
-				<div className='btn-crawl' onClick={this.getLocations}>
-					<h1>3. </h1>
-					<h2 className={this.state.crawlHighlight ? "lets-crawl highlight-green" : "lets-crawl"}>Let's Crawl!</h2>
-					<div className={this.state.btnColor ? "arrow-right arrow-green" : "arrow-right"}></div>
-				</div>
-				<br />
+			<div className="locationContainer">
+				<div className='crawlContainer'>
+					<div className='location-container' onClick={toggleHandler}>
+						<h1>1. </h1>
+						<h2
+							className={
+								this.state.highlight
+									? "choose-location highlight-green"
+									: "choose-location"
+							}>
+							{this.state.menuLocation}
+						</h2>
+					</div>
+					{this.state.toggle && (
+						<ul className='dropDown'>
+							{this.location().map((l, i) => {
+								return (
+									<li onClick={this.toggleOff} key={i}>
+										{l}
+									</li>
+								);
+							})}
+						</ul>
+					)}
+					<br />
+					<div className='number-container' onClick={toggleHandlerNumber}>
+						<h1>2. </h1>
+						<h2
+							className={
+								this.state.numbHighlight
+									? "choose-number highlight-green"
+									: "choose-number"
+							}>
+							{this.state.numbTextLocations}
+						</h2>
+					</div>
+					{this.state.toggleNumber && (
+						<ul className='dropDown'>
+							{this.numberOfLocations().map((n, i) => {
+								return (
+									<li onClick={this.toggleOffNumber} key={i}>
+										{n}
+									</li>
+								);
+							})}
+						</ul>
+					)}
+					<br />
+					<div className='btn-crawl' onClick={this.getLocations}>
+						<h1>3. </h1>
+						<h2
+							className={
+								this.state.crawlHighlight
+									? "lets-crawl highlight-green"
+									: "lets-crawl"
+							}>
+							Let's Crawl!
+						</h2>
+						<div
+							className={
+								this.state.btnColor ? "arrow-right arrow-green" : "arrow-right"
+							}></div>
+					</div>
+					<br />
 				</div>
 				<RestCard>
 					{this.props.currentUser && this.state.location !== "" ? (
@@ -202,10 +226,13 @@ class Locations extends Component {
 							<br />
 							<img src={location.image_url} />
 							<br />
-							{location.location.display_address[0]}. {location.location.display_address[1]} {location.location.display_address[2]} <br />
+							{location.location.display_address[0]}.{" "}
+							{location.location.display_address[1]}{" "}
+							{location.location.display_address[2]} <br />
 							<h3>
-								rating: <span className='spanHighlight'>{location.rating}</span> | 
-								<span className='spanHighlight'>{location.review_count}</span> reviews
+								rating: <span className='spanHighlight'>{location.rating}</span>{" "}
+								|<span className='spanHighlight'>{location.review_count}</span>{" "}
+								reviews
 							</h3>
 							<br />
 							{this.props.currentUser &&
@@ -220,7 +247,8 @@ class Locations extends Component {
 						</li>
 					))}
 				</RestCard>
-					<MapContainer random={random} />
+				</div>
+				<MapContainer random={random} />
 			</>
 		);
 	}
