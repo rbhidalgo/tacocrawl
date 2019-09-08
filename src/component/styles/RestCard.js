@@ -23,6 +23,7 @@ height: 225px;
 
   img {
     vertical-align: middle;
+    height: 150px;
   }
 `;
 

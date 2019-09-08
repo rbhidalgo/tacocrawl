@@ -198,7 +198,7 @@ class Locations extends Component {
 						<li key={i}>
 							<a href={location.url}>{location.name}</a>
 							<br />
-							<img src={location.image_url} width='100px' />
+							<img src={location.image_url} />
 							<br />
 							{location.location.display_address[0]}. {location.location.display_address[1]} {location.location.display_address[2]} <br />
 							<h3>
