@@ -220,6 +220,7 @@ class Locations extends Component {
 								<span className='spanHighlight'>log-in to add a crawl</span>
 							</h3>
 						)}
+						<MapContainer random={random} />
 					</div>
 					<RestCard>
 						<br />
@@ -261,7 +262,6 @@ class Locations extends Component {
 							))}
 					</RestCard>
 					</div>
-				<MapContainer random={random} />
 			</>
 		);
 	}
