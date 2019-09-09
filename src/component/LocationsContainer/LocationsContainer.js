@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import MapContainer from "../MapContainer/MapContainer";
 
 import "./locationContainer.css";
@@ -144,109 +144,120 @@ class Locations extends Component {
 		const random = this.state.randomCrawl;
 		return (
 			<>
-			<div className="locationContainer">
-				<div className='crawlContainer'>
-					<div className='location-container' onClick={toggleHandler}>
-						<h1>1. </h1>
-						<h2
-							className={
-								this.state.highlight
-									? "choose-location highlight-green"
-									: "choose-location"
-							}>
-							{this.state.menuLocation}
-						</h2>
+				<div className='locationContainer'>
+					<div className='crawlContainer'>
+						<div className='location-container' onClick={toggleHandler}>
+							<h1>1. </h1>
+							<h2
+								className={
+									this.state.highlight
+										? "choose-location highlight-green"
+										: "choose-location"
+								}>
+								{this.state.menuLocation}
+							</h2>
+						</div>
+						{this.state.toggle && (
+							<ul className='dropDown'>
+								{this.location().map((l, i) => {
+									return (
+										<li onClick={this.toggleOff} key={i}>
+											{l}
+										</li>
+									);
+								})}
+							</ul>
+						)}
+						<br />
+						<div className='number-container' onClick={toggleHandlerNumber}>
+							<h1>2. </h1>
+							<h2
+								className={
+									this.state.numbHighlight
+										? "choose-number highlight-green"
+										: "choose-number"
+								}>
+								{this.state.numbTextLocations}
+							</h2>
+						</div>
+						{this.state.toggleNumber && (
+							<ul className='dropDown'>
+								{this.numberOfLocations().map((n, i) => {
+									return (
+										<li onClick={this.toggleOffNumber} key={i}>
+											{n}
+										</li>
+									);
+								})}
+							</ul>
+						)}
+						<br />
+						<div className='btn-crawl' onClick={this.getLocations}>
+							<h1>3. </h1>
+							<h2
+								className={
+									this.state.crawlHighlight
+										? "lets-crawl highlight-green"
+										: "lets-crawl"
+								}>
+								Let's Crawl!
+							</h2>
+							<div
+								className={
+									this.state.btnColor
+										? "arrow-right arrow-green"
+										: "arrow-right"
+								}></div>
+						</div>
+						<br />
 					</div>
-					{this.state.toggle && (
-						<ul className='dropDown'>
-							{this.location().map((l, i) => {
-								return (
-									<li onClick={this.toggleOff} key={i}>
-										{l}
-									</li>
-								);
-							})}
-						</ul>
-					)}
-					<br />
-					<div className='number-container' onClick={toggleHandlerNumber}>
-						<h1>2. </h1>
-						<h2
-							className={
-								this.state.numbHighlight
-									? "choose-number highlight-green"
-									: "choose-number"
-							}>
-							{this.state.numbTextLocations}
-						</h2>
-					</div>
-					{this.state.toggleNumber && (
-						<ul className='dropDown'>
-							{this.numberOfLocations().map((n, i) => {
-								return (
-									<li onClick={this.toggleOffNumber} key={i}>
-										{n}
-									</li>
-								);
-							})}
-						</ul>
-					)}
-					<br />
-					<div className='btn-crawl' onClick={this.getLocations}>
-						<h1>3. </h1>
-						<h2
-							className={
-								this.state.crawlHighlight
-									? "lets-crawl highlight-green"
-									: "lets-crawl"
-							}>
-							Let's Crawl!
-						</h2>
-						<div
-							className={
-								this.state.btnColor ? "arrow-right arrow-green" : "arrow-right"
-							}></div>
-					</div>
-					<br />
-				</div>
-				<RestCard>
-					{this.props.currentUser && this.state.location !== "" ? (
-						<button onClick={() => this.addAllCrawl(random)}>
-							Add Entire Crawl
-						</button>
-					) : (
-						<h3>
-							<span className='spanHighlight'>log-in to add a crawl</span>
-						</h3>
-					)}
-					<br />
-					{random.map((location, i) => (
-						<li key={i}>
-							<a href={location.url}>{location.name}</a>
-							<br />
-							<img src={location.image_url} />
-							<br />
-							{location.location.display_address[0]}.{" "}
-							{location.location.display_address[1]}{" "}
-							{location.location.display_address[2]} <br />
+					<RestCard>
+						{this.props.currentUser && this.state.location !== "" ? (
+							<button onClick={() => this.addAllCrawl(random) && <Redirect to={`/users/${this.props.currentUser._id}`} />}>
+							
+								Add Entire Crawl
+							</button>
+						) : (
 							<h3>
-								rating: <span className='spanHighlight'>{location.rating}</span>{" "}
-								|<span className='spanHighlight'>{location.review_count}</span>{" "}
-								reviews
+								<span className='spanHighlight'>log-in to add a crawl</span>
 							</h3>
-							<br />
-							{this.props.currentUser &&
-								!this.props.currentUser.locations.some(
-									l => l.id === location.id
-								) && (
-									<button
-										onClick={() => this.doAddCrawl(location.id, location.name)}>
-										Add
-									</button>
-								)}
-						</li>
-					))}
-				</RestCard>
+						)}
+						<br />
+						<div className="cardContainer">
+							{random.map((location, i) => (
+								<li key={i}>
+									<div className='coverImage'>
+										<img src={location.image_url} className='restImg' />
+									</div>
+									<a href={location.url}>{location.name}</a>
+									<br />
+									{location.location.display_address[0]}.{" "}
+									{location.location.display_address[1]}{" "}
+									{location.location.display_address[2]} <br />
+									<h3>
+										rating:{" "}
+										<span className='spanHighlight'>{location.rating}</span> |
+										<span className='spanHighlight'>
+											{location.review_count}
+										</span>{" "}
+										reviews
+									</h3>
+									<br />
+									{this.props.currentUser &&
+										!this.props.currentUser.locations.some(
+											l => l.id === location.id
+										) && (
+											<button
+												onClick={() =>
+													this.doAddCrawl(location.id, location.name)
+												}>
+												Add
+											</button>
+										)}
+								</li>
+							))}
+						</div>
+					</RestCard>
 				</div>
 				<MapContainer random={random} />
 			</>

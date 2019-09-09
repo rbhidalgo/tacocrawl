@@ -22,9 +22,17 @@ margin-top: 10vh;
     border-bottom: 2px solid yellow;
   }
 
-  img {
-    vertical-align: middle;
-    height: 150px;
+  .restImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .coverImage {
+    background: lightgreen;
+    height: 350px;
+    width: 350px;
+    padding: 10px
   }
 `;
 

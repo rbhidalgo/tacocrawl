@@ -37,10 +37,10 @@ const NavBar = ({ currentUser, doLogout, sideMenuToggleClickHandler }) => (
 				) : (
 					[
 						<NavLink key={2} to={routes.REGISTER} activeClassName='selected'>
-							Register{" "}
+							Register
 						</NavLink>,
 						<NavLink key={3} to={"/login"} activeClassName='selected'>
-							Login{" "}
+							Login
 						</NavLink>
 					]
 				)}
