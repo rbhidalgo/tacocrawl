@@ -34,6 +34,11 @@ margin-top: 10vh;
     width: 350px;
     padding: 10px
   }
+
+  .cardContainer {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 export default RestCard;

@@ -210,10 +210,8 @@ class Locations extends Component {
 								}></div>
 						</div>
 						<br />
-					</div>
-					<RestCard>
 						{this.props.currentUser && this.state.location !== "" ? (
-							<button onClick={() => this.addAllCrawl(random) && <Redirect to={`/users/${this.props.currentUser._id}`} />}>
+							<button onClick={() => this.addAllCrawl(random)}>
 							
 								Add Entire Crawl
 							</button>
@@ -222,13 +220,16 @@ class Locations extends Component {
 								<span className='spanHighlight'>log-in to add a crawl</span>
 							</h3>
 						)}
+					</div>
+					<RestCard>
 						<br />
-						<div className="cardContainer">
 							{random.map((location, i) => (
 								<li key={i}>
+								<div className="cardContainer">
 									<div className='coverImage'>
 										<img src={location.image_url} className='restImg' />
 									</div>
+									<div className="restInfo">
 									<a href={location.url}>{location.name}</a>
 									<br />
 									{location.location.display_address[0]}.{" "}
@@ -254,11 +255,12 @@ class Locations extends Component {
 												Add
 											</button>
 										)}
+								</div>
+						</div>
 								</li>
 							))}
-						</div>
 					</RestCard>
-				</div>
+					</div>
 				<MapContainer random={random} />
 			</>
 		);
