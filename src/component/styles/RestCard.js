@@ -39,6 +39,7 @@ overflow-y: auto;
   .cardContainer {
     display: flex;
     flex-direction: row;
+    margin: 10px auto;
   }
 `;
 
