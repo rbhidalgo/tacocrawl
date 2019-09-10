@@ -31,15 +31,18 @@ overflow-y: auto;
 
   .coverImage {
     background: lightgreen;
-    height: 350px;
-    width: 350px;
-    padding: 10px
+    height: 25vh;
+    width: 20vh;
   }
 
   .cardContainer {
     display: flex;
     flex-direction: row;
     margin: 10px auto;
+  }
+
+  .restInfo {
+    text-align: center;
   }
 `;
 
