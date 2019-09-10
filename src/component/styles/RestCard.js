@@ -5,8 +5,9 @@ flex: 2;
 color: #049DD8;
 background-color: #FFFCF7;
 padding: 30px;
-height: 225px;
 margin-top: 10vh;
+height: 100vh;
+overflow-y: auto;
 
   a:link, a:visited {
     // background-color: #FFED03;
