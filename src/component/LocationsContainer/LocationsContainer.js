@@ -230,12 +230,13 @@ class Locations extends Component {
 									<div className='coverImage'>
 										<img src={location.image_url} className='restImg' />
 									</div>
-									<div className="restInfo">
-									<a href={location.url}>{location.name}</a>
-									<br />
+									<div className="restInfo"><h4>
+									<a href={location.url}>{location.name}</a></h4>
+									<p>
 									{location.location.display_address[0]}.{" "}
 									{location.location.display_address[1]}{" "}
-									{location.location.display_address[2]} <br />
+									{location.location.display_address[2]}
+									</p>
 									<h3>
 										rating:{" "}
 										<span className='spanHighlight'>{location.rating}</span> |
@@ -244,7 +245,6 @@ class Locations extends Component {
 										</span>{" "}
 										reviews
 									</h3>
-									<br />
 									{this.props.currentUser &&
 										!this.props.currentUser.locations.some(
 											l => l.id === location.id
