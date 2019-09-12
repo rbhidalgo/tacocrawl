@@ -267,7 +267,7 @@ class Locations extends Component {
 											<span className='spanHighlight'>
 												{location.review_count}
 											</span>
-											reviews
+											&nbsp;reviews
 										</h3>
 										<p>
 											{location.location.display_address[0]}.{" "}
