@@ -44,6 +44,12 @@ overflow-y: auto;
   .restInfo {
     text-align: center;
   }
+
+  .yellowLine {
+    border-bottom: 4px solid yellow;
+  }
+
+
 `;
 
 export default RestCard;

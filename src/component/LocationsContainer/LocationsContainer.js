@@ -9,6 +9,7 @@ import star3half from "./3halfstar.png";
 import star4 from "./4star.png";
 import star4half from "./4halfstar.png";
 import star5 from "./5star.png";
+import pinImg from "./pin.png"
 
 import "./locationContainer.css";
 import RestCard from "../styles/RestCard";
@@ -242,7 +243,7 @@ class Locations extends Component {
 											<a href={location.url}>{location.name}</a>
 										</h4>
 										{/* <span className='spanHighlight'>{location.rating}</span> */}
-
+										<div className="ratingContainer">
 										{location.rating <= 1 ? (
 											<img src={star1} />
 										) : location.rating <= 2 && location.rating > 1 ? (
@@ -251,9 +252,9 @@ class Locations extends Component {
 											<img src={star2half} />
 										) : location.rating == 3 ? (
 											<img src={star3} />
-										): location.rating < 4 && location.rating > 3 ? (
+										) : location.rating < 4 && location.rating > 3 ? (
 											<img src={star3half} />
-										): location.rating == 4 ? (
+										) : location.rating == 4 ? (
 											<img src={star4} />
 										) : location.rating <= 4.5 && location.rating > 4 ? (
 											<img src={star4half} />
@@ -262,14 +263,13 @@ class Locations extends Component {
 										) : (
 											<p>{location.rating}</p>
 										)}
-
+										<span className="yellowLine"></span>
+										</div>
 										<h3>
-											<span className='spanHighlight'>
-												{location.review_count}
-											</span>
+											{location.review_count}
 											&nbsp;reviews
 										</h3>
-										<p>
+										<p><img src={pinImg} />
 											{location.location.display_address[0]}.{" "}
 											{location.location.display_address[1]}{" "}
 											{location.location.display_address[2]}
