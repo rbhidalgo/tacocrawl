@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import MapContainer from "../MapContainer/MapContainer";
+import star1 from "./1star.png"
 
 import "./locationContainer.css";
 import RestCard from "../styles/RestCard";
@@ -232,19 +233,19 @@ class Locations extends Component {
 									</div>
 									<div className="restInfo"><h4>
 									<a href={location.url}>{location.name}</a></h4>
+									<span className='spanHighlight'>{location.rating}</span>
+									<img src={this.starRating}></img>
+									<h3>
+										<span className='spanHighlight'>
+											{location.review_count} 
+										</span>
+										reviews
+									</h3>
 									<p>
 									{location.location.display_address[0]}.{" "}
 									{location.location.display_address[1]}{" "}
 									{location.location.display_address[2]}
 									</p>
-									<h3>
-										rating:{" "}
-										<span className='spanHighlight'>{location.rating}</span> |
-										<span className='spanHighlight'>
-											{location.review_count}
-										</span>{" "}
-										reviews
-									</h3>
 									{this.props.currentUser &&
 										!this.props.currentUser.locations.some(
 											l => l.id === location.id
