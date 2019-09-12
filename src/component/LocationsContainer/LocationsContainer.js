@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import MapContainer from "../MapContainer/MapContainer";
-import star1 from "./1star.png"
+import star1 from "./1star.png";
+import star2 from "./2star.png";
+import star2half from "./2halfstar.png";
+import star3 from "./3star.png";
+import star3half from "./3halfstar.png";
+import star4 from "./4star.png";
+import star4half from "./4halfstar.png";
+import star5 from "./5star.png";
 
 import "./locationContainer.css";
 import RestCard from "../styles/RestCard";
@@ -213,7 +220,6 @@ class Locations extends Component {
 						<br />
 						{this.props.currentUser && this.state.location !== "" ? (
 							<button onClick={() => this.addAllCrawl(random)}>
-							
 								Add Entire Crawl
 							</button>
 						) : (
@@ -225,44 +231,66 @@ class Locations extends Component {
 					</div>
 					<RestCard>
 						<br />
-							{random.map((location, i) => (
-								<li key={i}>
-								<div className="cardContainer">
+						{random.map((location, i) => (
+							<li key={i}>
+								<div className='cardContainer'>
 									<div className='coverImage'>
 										<img src={location.image_url} className='restImg' />
 									</div>
-									<div className="restInfo"><h4>
-									<a href={location.url}>{location.name}</a></h4>
-									<span className='spanHighlight'>{location.rating}</span>
-									<img src={this.starRating}></img>
-									<h3>
-										<span className='spanHighlight'>
-											{location.review_count} 
-										</span>
-										reviews
-									</h3>
-									<p>
-									{location.location.display_address[0]}.{" "}
-									{location.location.display_address[1]}{" "}
-									{location.location.display_address[2]}
-									</p>
-									{this.props.currentUser &&
-										!this.props.currentUser.locations.some(
-											l => l.id === location.id
-										) && (
-											<button
-												onClick={() =>
-													this.doAddCrawl(location.id, location.name)
-												}>
-												Add
-											</button>
+									<div className='restInfo'>
+										<h4>
+											<a href={location.url}>{location.name}</a>
+										</h4>
+										{/* <span className='spanHighlight'>{location.rating}</span> */}
+
+										{location.rating <= 1 ? (
+											<img src={star1} />
+										) : location.rating <= 2 && location.rating > 1 ? (
+											<img src={star2} />
+										) : location.rating < 3 && location.rating > 2 ? (
+											<img src={star2half} />
+										) : location.rating == 3 ? (
+											<img src={star3} />
+										): location.rating < 4 && location.rating > 3 ? (
+											<img src={star3half} />
+										): location.rating == 4 ? (
+											<img src={star4} />
+										) : location.rating <= 4.5 && location.rating > 4 ? (
+											<img src={star4half} />
+										) : location.rating <= 5 && location.rating > 4.5 ? (
+											<img src={star5} />
+										) : (
+											<p>{location.rating}</p>
 										)}
+
+										<h3>
+											<span className='spanHighlight'>
+												{location.review_count}
+											</span>
+											reviews
+										</h3>
+										<p>
+											{location.location.display_address[0]}.{" "}
+											{location.location.display_address[1]}{" "}
+											{location.location.display_address[2]}
+										</p>
+										{this.props.currentUser &&
+											!this.props.currentUser.locations.some(
+												l => l.id === location.id
+											) && (
+												<button
+													onClick={() =>
+														this.doAddCrawl(location.id, location.name)
+													}>
+													Add
+												</button>
+											)}
+									</div>
 								</div>
-						</div>
-								</li>
-							))}
+							</li>
+						))}
 					</RestCard>
-					</div>
+				</div>
 			</>
 		);
 	}
