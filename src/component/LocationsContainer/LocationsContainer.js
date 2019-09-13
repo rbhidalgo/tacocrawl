@@ -170,7 +170,7 @@ class Locations extends Component {
 							<ul className='dropDown'>
 								{this.location().map((l, i) => {
 									return (
-										<li onClick={this.toggleOff} key={i}>
+										<li onClick={this.toggleOff} key={i} className="liOption">
 											{l}
 										</li>
 									);
@@ -193,7 +193,7 @@ class Locations extends Component {
 							<ul className='dropDown'>
 								{this.numberOfLocations().map((n, i) => {
 									return (
-										<li onClick={this.toggleOffNumber} key={i}>
+										<li onClick={this.toggleOffNumber} key={i} className="liNumbers">
 											{n}
 										</li>
 									);
@@ -269,9 +269,9 @@ class Locations extends Component {
 											{location.review_count}
 											&nbsp;reviews
 										</h3>
-										<p><img src={pinImg} />
-											{location.location.display_address[0]}.{" "}
-											{location.location.display_address[1]}{" "}
+										<p><img src={pinImg} className="mapPin"/>
+											{location.location.display_address[0]}. <br />
+											{location.location.display_address[1]}
 											{location.location.display_address[2]}
 										</p>
 										{this.props.currentUser &&

@@ -32,7 +32,7 @@ overflow-y: auto;
   .coverImage {
     background: lightgreen;
     height: 25vh;
-    width: 20vh;
+    width: 40vh;
   }
 
   .cardContainer {
@@ -43,12 +43,17 @@ overflow-y: auto;
 
   .restInfo {
     text-align: center;
+    width: 60vw;
   }
 
   .yellowLine {
     border-bottom: 4px solid yellow;
   }
 
+  .ratingContainer > img,
+  .mapPin {
+    height: 2vh;
+}
 
 `;
 

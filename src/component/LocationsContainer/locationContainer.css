@@ -65,10 +65,14 @@ h1 {
     align-items: center;
 }
 
-li {
-    text-align: left;
-    padding-left: 5vw;
+.liOption {
     cursor: pointer;
+    padding-left: 5vw;
+}
+
+.liNumbers {
+    cursor: pointer;
+    padding-left: 6vw;
 }
 
 .arrow-right {
