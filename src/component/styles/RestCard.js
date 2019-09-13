@@ -55,6 +55,10 @@ overflow-y: auto;
   display: flex;
 }
 
+.ratingContainer {
+  margin: 1vh 0;
+}
+
 `;
 
 export default RestCard;
