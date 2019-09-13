@@ -33,17 +33,26 @@ overflow-y: auto;
   }
 
   .restInfo {
-    text-align: center;
     width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .yellowLine {
     border-bottom: 4px solid yellow;
   }
 
-  .ratingContainer > img,
-  .mapPin {
+  .ratingContainer > img {
     height: 2vh;
+}
+
+.mapPin {
+  height: 5vh;
+}
+
+.restAddInfo {
+  display: flex;
 }
 
 `;

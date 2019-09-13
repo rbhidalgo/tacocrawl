@@ -269,11 +269,14 @@ class Locations extends Component {
 											{location.review_count}
 											&nbsp;reviews
 										</h3>
-										<p><img src={pinImg} className="mapPin"/>
+										<div className="restAddInfo">
+										<img src={pinImg} className="mapPin"/>
+										<p>
 											{location.location.display_address[0]}. <br />
 											{location.location.display_address[1]}
 											{location.location.display_address[2]}
 										</p>
+										</div>
 										{this.props.currentUser &&
 											!this.props.currentUser.locations.some(
 												l => l.id === location.id
