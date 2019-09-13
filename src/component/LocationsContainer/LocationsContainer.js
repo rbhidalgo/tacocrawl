@@ -240,7 +240,7 @@ class Locations extends Component {
 									</div>
 									<div className='restInfo'>
 										<h4>
-											<a href={location.url}>{location.name}</a>
+											<a href={location.url} target="_blank">{location.name}</a>
 										</h4>
 										{/* <span className='spanHighlight'>{location.rating}</span> */}
 										<div className="ratingContainer">
