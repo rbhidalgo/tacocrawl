@@ -53,6 +53,7 @@ overflow-y: auto;
 
 .restAddInfo {
   display: flex;
+  margin: 2vh 0;
 }
 
 .ratingContainer {
