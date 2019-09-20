@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import MapContainer from "../MapContainer/MapContainer";
 import star1 from "./1star.png";
 import star2 from "./2star.png";
@@ -236,11 +236,11 @@ class Locations extends Component {
 							<li key={i}>
 								<div className='cardContainer'>
 									<div className='coverImage'>
-										<img src={location.image_url} className='restImg' />
+										<img src={location.image_url} className='restImg' alt="restaurant food" />
 									</div>
 									<div className='restInfo'>
 										<h4>
-											<a href={location.url} target="_blank" className="restTitle">{location.name}</a>
+											<a href={location.url} target="_blank" className="restTitle" rel="noopener noreferrer">{location.name}</a>
 										</h4>
 										{/* <span className='spanHighlight'>{location.rating}</span> */}
 										<div className="ratingContainer">
@@ -270,7 +270,7 @@ class Locations extends Component {
 											&nbsp;reviews
 										</h3>
 										<div className="restAddInfo">
-										<img src={pinImg} className="mapPin"/>
+										<img src={pinImg} className="mapPin" alt="pin on map"/>
 										<p>
 											{location.location.display_address[0]}. <br />
 											{location.location.display_address[1]}
