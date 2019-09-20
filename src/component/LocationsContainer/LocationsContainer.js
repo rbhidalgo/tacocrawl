@@ -250,11 +250,11 @@ class Locations extends Component {
 											<img src={star2} />
 										) : location.rating < 3 && location.rating > 2 ? (
 											<img src={star2half} />
-										) : location.rating == 3 ? (
+										) : location.rating === 3 ? (
 											<img src={star3} />
 										) : location.rating < 4 && location.rating > 3 ? (
 											<img src={star3half} />
-										) : location.rating == 4 ? (
+										) : location.rating === 4 ? (
 											<img src={star4} />
 										) : location.rating <= 4.5 && location.rating > 4 ? (
 											<img src={star4half} />
