@@ -245,21 +245,21 @@ class Locations extends Component {
 										{/* <span className='spanHighlight'>{location.rating}</span> */}
 										<div className="ratingContainer">
 										{location.rating <= 1 ? (
-											<img src={star1} />
+											<img src={star1} alt="1 star rating" />
 										) : location.rating <= 2 && location.rating > 1 ? (
-											<img src={star2} />
+											<img src={star2} alt="2 star rating" />
 										) : location.rating < 3 && location.rating > 2 ? (
-											<img src={star2half} />
+											<img src={star2half} alt="2.5 star rating"  />
 										) : location.rating === 3 ? (
-											<img src={star3} />
+											<img src={star3} alt="3 star rating"  />
 										) : location.rating < 4 && location.rating > 3 ? (
-											<img src={star3half} />
+											<img src={star3half} alt="3.5 star rating"  />
 										) : location.rating === 4 ? (
-											<img src={star4} />
+											<img src={star4} alt="4 star rating" />
 										) : location.rating <= 4.5 && location.rating > 4 ? (
-											<img src={star4half} />
+											<img src={star4half} alt="4.5 star rating" />
 										) : location.rating <= 5 && location.rating > 4.5 ? (
-											<img src={star5} />
+											<img src={star5} alt="5 star rating" />
 										) : (
 											<p>{location.rating}</p>
 										)}
