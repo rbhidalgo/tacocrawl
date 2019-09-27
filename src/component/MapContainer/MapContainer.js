@@ -21,7 +21,7 @@ class MapContainer extends Component {
 		return (
 			<>
 				<hr />
-				<div style={{ height: "50vh", width:"100%" }}>
+				<div style={{ height: "50vh", width:"100%" }} className='hidden'>
 					<GoogleMapReact
 						bootstrapURLKeys={{
 							key: "AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"

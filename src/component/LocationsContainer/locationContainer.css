@@ -145,4 +145,7 @@ h1 {
     .locationContainer {
       flex-direction: column;
   }
+    .hidden {
+      display: none;
+    }
 }
