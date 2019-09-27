@@ -140,3 +140,9 @@ h1 {
   .ratingContainer {
     margin: 1vh 0;
   }
+
+  @media (max-width: 769px) {
+    .locationContainer {
+      flex-direction: column;
+  }
+}
