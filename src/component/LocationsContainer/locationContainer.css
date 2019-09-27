@@ -161,4 +161,8 @@ h1 {
   li {
     font-size: 20px;
   }
+
+  .crawlContainer {
+    width: 100vw;
+  }
 }
