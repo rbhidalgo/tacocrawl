@@ -152,4 +152,13 @@ h1 {
     h1 {
       font-size: 48px;
   }
+
+  .choose-location, .choose-number, .lets-crawl {
+    border-bottom: 4px solid #FFED03;
+    line-height: 1.2;
+    font-size: 20px;
+}
+  li {
+    font-size: 20px;
+  }
 }
