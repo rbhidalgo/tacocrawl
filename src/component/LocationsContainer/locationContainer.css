@@ -172,7 +172,12 @@ h1 {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 20px solid #FFED03;
-        border-bottom: none;
-        padding-left: 0;
+    border-bottom: none;
+   padding-left: 0;
   }
+
+  .coverImage {
+    height: 20vh;
+    width: 15vh;
 }
+  }
