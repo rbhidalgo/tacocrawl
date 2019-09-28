@@ -141,7 +141,7 @@ h1 {
     margin: 1vh 0;
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: 480px) {
     .locationContainer {
       flex-direction: column;
   }
