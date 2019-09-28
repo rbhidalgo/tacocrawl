@@ -214,8 +214,8 @@ class Locations extends Component {
 							<div
 								className={
 									this.state.btnColor
-										? "arrow-right arrow-green"
-										: "arrow-right"
+										? "arrow-right arrow-green arrow-down"
+										: "arrow-right arrow-down"
 								}></div>
 						</div>
 						<br />
