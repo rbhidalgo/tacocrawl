@@ -165,4 +165,12 @@ h1 {
   .crawlContainer {
     width: 100vw;
   }
+
+  .arrow-right {
+
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #FFED03;
+    margin-left: 0;
+  }
 }
