@@ -96,7 +96,7 @@ justify-content: space-between;
     padding: 1vh 1vw;
 }
 
-@media (max-width: 769px) {
+@media only screen and (max-width: 600px) {
     .home-image {
         height: 35vh;
         margin: 0 auto;
@@ -111,3 +111,10 @@ justify-content: space-between;
     }
     
   }
+
+
+@media only screen and (max-width: 600px) {
+	.button-container {
+		padding: 6vh 0;
+}
+}
