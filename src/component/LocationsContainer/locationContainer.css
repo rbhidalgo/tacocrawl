@@ -192,4 +192,9 @@ h1 {
   .liOption {
     padding-left: 13vw;
   }
+
+  .liNumbers {
+    padding-left: 16vw;
+  }
+
 } /* end of media query */
