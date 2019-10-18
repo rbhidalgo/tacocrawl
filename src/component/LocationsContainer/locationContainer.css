@@ -189,4 +189,7 @@ h1 {
     font-size: 18px;
   }
 
+  .liOption {
+    padding-left: 13vw;
   }
+} /* end of media query */
