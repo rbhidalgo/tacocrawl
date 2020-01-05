@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 
-const API_KEY = process.env.MAP_API_KEY;
-
+// const API_KEY = process.env.MAP_API_KEY;
 
 const MapPin = ({ image }) => (
-	<div>{<img className='pin' src={image} />}</div>
+	<div>{<img className='pin' src={image} alt='pin on map' />}</div>
 );
 
 class MapContainer extends Component {
@@ -21,7 +20,7 @@ class MapContainer extends Component {
 		return (
 			<>
 				<hr />
-				<div style={{ height: "50vh", width:"100%" }} className='hidden'>
+				<div style={{ height: "50vh", width: "100%" }} className='hidden'>
 					<GoogleMapReact
 						bootstrapURLKeys={{
 							key: "AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"
